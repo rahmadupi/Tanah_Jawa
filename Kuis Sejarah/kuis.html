@@ -8,39 +8,57 @@
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 </head>
 <body>
+  <audio id="backsoundAudio" src="audio/backsound.m4a" loop></audio>
+  <audio id="hoverSound" src="audio/bubbleSFX.mp3"></audio>
+  <audio id="correctSound" src="audio/correctSFX.mp3"></audio>
+  <audio id="incorrectSound" src="audio/incorrectSFX.mp3"></audio>
+
   <div class="line"></div>
   <div class="options-container">
-    <div class="option" id="option-1">Badan Pembentukan Undang-Undang Dasar Kemerdekaan Indonesia</div>
-    <div class="option" id="option-2">Badan Penyelidik Usaha Persiapan Kemerdekaan Indonesia</div>
-    <div class="option" id="option-3">Badan Perencanaan Umum Persiapan Kemerdekaan Indonesia</div>
-    <div class="option" id="option-4">Badan Pembantu Upaya Proklamasi Kemerdekaan Indonesia</div>
+    <div class="option" id="option-1" data-index="1"></div>
+    <div class="option" id="option-2" data-index="2"></div>
+    <div class="option" id="option-3" data-index="3"></div>
+    <div class="option" id="option-4" data-index="4"></div>
   </div>
     <div class="something">
     <div class="pause-icon" id="pauseBtn"></div>
     <div class="progress-bar">
-      <div class="progress"></div>
+      <div class="progress" id="progress"></div>
     </div>
     <div class="heartContainer">
       <img src="images/fullHeart.png" class="heart" id="fullHeart" alt="">
       <img src="images/leftHeart.png" id="leftHeart" class="heart" alt="Left Half">
       <img src="images/rightHeart.png" id="rightHeart" class="heart" alt="Right Half">
     </div>
-    <div class="heart-number">5</div>
+    <div class="heart-number" id="heartAmmount"></div>
   </div>
   <div class="blur" id="menuBlur" style="display: none;"></div>
   <div class="menu" id="menuForm" style="display: none;">
     <p>MENU</p>
     <div class="container">
-      <div class="menu-option"></div>
-      <div class="menu-option"></div>
-      <div class="menu-option"></div>
+      <div class="menu-option" id="returnHomeBtn">HOME</div>
+      <div class="menu-option" id="restartBtn">RESTART</div>
+      <div class="menu-option" id="settingBtn">SETTINGS</div>
     </div>
+  </div>
+  <div class="settingOption" id="settingForm">
+    <label for="musicVolume">Music Volume:</label>
+    <input type="range" id="musicVolume" min="0" max="100" value="40">
+    <label for="sfxVolume">SFX Volume:</label>
+    <input type="range" id="sfxVolume" min="0" max="100" value="100">
   </div>
   <div class="question-box">
     <div class="circle">?</div>
     <div class="chatBubble"></div>
-    <div class="question">Apa kepanjangan dari BPUPKI?</div>
+    <div class="question" id="question"></div>
   </div>
+  <div class="gameOverForm" id="successForm">
+    <p>CONGRATULATION!</p>
+  </div>
+  <div class="gameOverForm" id="failForm">
+    <p>SORRY!</p>
+  </div>
+
   <script src="kuis.js"></script>
 </body>
 </html>
