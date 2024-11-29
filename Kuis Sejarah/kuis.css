@@ -88,6 +88,7 @@ body {
     position: fixed;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     width: 30%;
     height: 74%;
     background-color: white;
@@ -112,7 +113,7 @@ body {
   }
 
   .menu-option {
-    width: 80%;
+    width: 70%;
     height: 10%;
     background: white;
     border-radius: 20px;
@@ -122,9 +123,39 @@ body {
     justify-content: center;
     font-size: 2vh;
     padding: 3%;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     overflow: hidden;
   }
+
+  .settingOption {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+    height: auto;
+    background-color: white;
+    left: 35%;
+    top: 16%;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    border: 10px dashed black;
+    z-index: 10;
+    /* box-sizing: border-box; */
+  }
+  
+  .settingOption label {
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .settingOption input[type="range"] {
+    width: 80%;
+    cursor: pointer;
+  }  
   
   .progress-bar {
     position: relative;
@@ -141,9 +172,10 @@ body {
   .progress {
     position: absolute;
     background-color: #70FF48;
-    width: 20%;
+    width: 0%;
     height: 100%;
     border-radius: 100px;
+    transition: width 0.2s ease; 
   }
   
   .heartContainer {
@@ -271,4 +303,27 @@ body {
     inset: 0;
     z-index: 1;
   }
-  
+
+.gameOverForm {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameOverForm p {
+  font-size: 3rem;
+}
+
+#successForm {
+  display: none;
+  background-color: #aaff92;
+}
+
+#failForm {
+  display: none;
+  background-color: rgb(255, 87, 87);
+}
