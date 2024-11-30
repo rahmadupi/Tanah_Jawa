@@ -17,6 +17,40 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "LeoDemo";
+  src: url("./fonts/LEonardo-Demo-Bold.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "LeoSemiDemo";
+  src: url("./fonts/Leonardo-SemiRounded-Demo.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LeoRound";
+  src: url("./fonts/Leonardo-Rounded-Demo.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "LeoDemoUltra";
+  src: url("./fonts/Leonardo-Demo-Ultralight.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("./fonts/fredoka-one.one-regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --background-color: aqua;
 }
@@ -39,6 +73,7 @@ body {
   align-content: center;
   padding: 10px;
   width: 100%;
+  background: rgb(255, 255, 255);
   position: fixed;
   top: 0;
   left: 0;
@@ -96,13 +131,19 @@ body {
   text-decoration: none;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
 .content {
   display: flex;
   padding: 20px;
   height: 100%;
   padding: 0;
   margin: 0;
-  margin-inline: 200px;
+  margin-top: 50px;
+  margin-inline: 100px;
 }
 
 .left,
@@ -113,22 +154,25 @@ body {
   align-items: center;
 }
 
-table {
+.leaderboard {
   width: 100%;
   border-collapse: collapse;
   background-color: rgb(3, 135, 135);
   color: white;
-  box-shadow: 5px 6px 0px black;
+  box-shadow: 5px 5px 0px black;
+  border: 2px solid black;
 }
-th,
-td {
+.leaderboard th,
+.leaderboard td {
   border: 1px solid black;
-}
-
-th,
-td {
+  border-radius: 10px;
+  /* width: 150px;  */
+  height: 20px;
   padding: 10px;
   text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .button {
@@ -136,22 +180,76 @@ td {
   background-color: blue;
   color: white;
   cursor: pointer;
-  font-family: Minecraft;
+  font-family: Fredoka;
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   cursor: pointer;
   transition: transform 0.07s ease, box-shadow 0.07s ease;
-  box-shadow: 2px 2px 0px 1px rgb(0, 0, 0);
+  box-shadow: 3px 3px 0px 1px rgb(0, 0, 0);
+  /* border-radius: 10px; */
 }
 
 .button:hover {
   background-color: #ffffff;
   color: #000000;
   transform: translate(-3px, -3px);
-  box-shadow: 4px 4px 0px 1px rgb(0, 0, 0);
+  box-shadow: 5px 5px 0px 1px rgb(0, 0, 0);
 }
 .button:active {
   transform: translate(1px, 1px);
-  box-shadow: 0px 0px 0px 1px rgb(0, 0, 0);
+  box-shadow: 1px 1px px 1px rgb(0, 0, 0);
+}
+
+.section-header {
+  text-align: center;
+  font-family: Fredoka;
+  text-decoration: underline;
+}
+
+.section-line {
+  width: 88%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.additional-content {
+  display: flex;
+  justify-content: space-around;
+  /* padding: 0px 20px; */
+  padding: 0;
+  padding-inline: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 10px;
+}
+
+.image img {
+  max-width: 400px;
+  max-height: 225px;
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 1em;
+  text-align: center;
 }
