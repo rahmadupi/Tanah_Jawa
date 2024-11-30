@@ -1,0 +1,157 @@
+@font-face {
+  font-family: "Minecraft";
+  src: url("./fonts/Minecraft.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinaR";
+  src: url("./fonts/Mina-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MinaB";
+  src: url("./fonts/Mina-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --background-color: aqua;
+}
+
+body {
+  font-family: "MinaR", sans-serif;
+  background-color: var(--background-color);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* .menu {
+  position: relative;
+} */
+
+#menuButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 25px;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  background: none;
+  border: none;
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.username .username-button {
+  font-family: MinaB;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  transition: transform 0.07s ease, scale 0.07s ease, color 0.07s ease;
+}
+
+.username .username-button:hover {
+  scale: 1.1;
+  text-decoration: underline;
+  color: white;
+}
+
+.username .username-button:active {
+  transform: translate(1px, 1px);
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  padding: 20px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  margin-inline: 200px;
+}
+
+.left,
+.right {
+  flex: 1;
+  padding: 30px;
+  align-content: center;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgb(3, 135, 135);
+  color: white;
+  box-shadow: 5px 6px 0px black;
+}
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+.button {
+  display: block;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  font-family: Minecraft;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.07s ease, box-shadow 0.07s ease;
+  box-shadow: 2px 2px 0px 1px rgb(0, 0, 0);
+}
+
+.button:hover {
+  background-color: #ffffff;
+  color: #000000;
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0px 1px rgb(0, 0, 0);
+}
+.button:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0px 0px 0px 1px rgb(0, 0, 0);
+}
