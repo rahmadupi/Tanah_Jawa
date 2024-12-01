@@ -1,0 +1,151 @@
+@font-face {
+    font-family: "Fredoka";
+    src: url("../fonts/fredoka-one.one-regular.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MinaB";
+    src: url("../fonts/Mina-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --background-color: aqua;
+    --color1: rgb(255, 255, 255);
+    --color2: rgb(0, 68, 255);
+    --color3: 3;
+    --color4: 4;
+    --color5: rgb(0, 232, 232);
+
+    --font: Fredoka;
+    --font2: MinaB;
+
+    --font-size1: 2rem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--background-color);
+}
+
+.background-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure the background is behind other content */
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login_register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* width: 100%; */
+    padding: 20px;
+    background-color: var(--color1);
+    /* border-radius: 10px; */
+    border: #000000 solid 3px;
+    box-shadow: 5px 5px 0px 1px rgb(0, 0, 0);
+}
+
+.login_register h2 {
+    font-family: var(--font2);
+    font-size: var(--font-size1);
+    margin: 0;
+}
+
+.login_register form {
+    display: flex;
+    flex-direction: column;
+    /* padding: 20px; */
+    width: 100%;
+}
+
+.login_register form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: var(--font);
+    transition: scale 0.07s ease;
+    /* border-radius: 10px; */
+    /* box-shadow: 3px 3px 0px 1px rgb(0, 0, 0); */
+}
+
+.login_register form input:hover {
+    /* border: none;*/
+    cursor: text;
+    scale: 1.05;
+}
+
+.login_register p {
+    font-family: var(--font2);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    margin: 0;
+    font-size: 10px;
+    text-align: center;
+}
+
+.login_register a {
+    text-decoration: underline;
+    color: var(--color2);
+    font-family: var(--font2);
+    font-size: 10px;
+    text-align: center;
+    margin: 0;
+    transition: font-size 0.1s ease;
+}
+.login_register a:hover {
+    text-decoration: none;
+
+    color: var(--color2);
+    font-family: var(--font2);
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
+}
+
+.button {
+    display: block;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    font-family: var(--font);
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-inline: 40px;
+    cursor: pointer;
+    transition: transform 0.07s ease, box-shadow 0.07s ease;
+    box-shadow: 3px 3px 0px 1px rgb(0, 0, 0);
+    /* border-radius: 10px; */
+}
+
+.button:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transform: translate(-3px, -3px);
+    box-shadow: 5px 5px 0px 1px rgb(0, 0, 0);
+}
+.button:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px 1px rgb(0, 0, 0);
+}

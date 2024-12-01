@@ -1,85 +1,97 @@
 @font-face {
-  font-family: "Minecraft";
-  src: url("./fonts/Minecraft.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "Minecraft";
+    src: url("./fonts/Minecraft.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-  font-family: "MinaR";
-  src: url("./fonts/Mina-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "MinaR";
+    src: url("./fonts/Mina-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
-  font-family: "MinaB";
-  src: url("./fonts/Mina-Bold.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "LeoDemo";
-  src: url("./fonts/LEonardo-Demo-Bold.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "LeoSemiDemo";
-  src: url("./fonts/Leonardo-SemiRounded-Demo.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "MinaB";
+    src: url("./fonts/Mina-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "LeoRound";
-  src: url("./fonts/Leonardo-Rounded-Demo.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "LeoDemo";
+    src: url("./fonts/LEonardo-Demo-Bold.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "LeoSemiDemo";
+    src: url("./fonts/Leonardo-SemiRounded-Demo.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "LeoDemoUltra";
-  src: url("./fonts/Leonardo-Demo-Ultralight.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "LeoRound";
+    src: url("./fonts/Leonardo-Rounded-Demo.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "Fredoka";
-  src: url("./fonts/fredoka-one.one-regular.otf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "LeoDemoUltra";
+    src: url("./fonts/Leonardo-Demo-Ultralight.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("./fonts/fredoka-one.one-regular.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 :root {
-  --background-color: aqua;
+    --background-color: aqua;
+    --color1: rgb(255, 255, 255);
+    --color2: 2;
+    --color3: 3;
+    --color4: 4;
+    --color5: 5;
+    --color6: 6;
+    --color7: 7;
+
+    --font1: 1;
+    --font2: 2;
+    --font3: 3;
 }
 
 body {
-  font-family: "MinaR", sans-serif;
-  background-color: var(--background-color);
-  width: 100%;
-  margin: 0;
-  padding: 0;
+    font-family: "MinaR", sans-serif;
+    background-color: var(--background-color);
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
+
 .container {
-  height: 100vh;
+    height: 100vh;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  padding: 10px;
-  width: 100%;
-  background: rgb(255, 255, 255);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 10px;
+    width: 100%;
+    background: var(--color1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-sizing: border-box;
 }
 
 /* .menu {
@@ -87,169 +99,169 @@ body {
 } */
 
 #menuButton {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 50px;
-  right: 25px;
-  background-color: white;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    background-color: var(--color1);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
 .dropdown-content button {
-  background: none;
-  border: none;
-  padding: 10px;
-  text-align: left;
-  cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
 }
 
 .username .username-button {
-  font-family: MinaB;
-  background: none;
-  border: none;
-  cursor: pointer;
+    font-family: MinaB;
+    background: none;
+    border: none;
+    cursor: pointer;
 
-  transition: transform 0.07s ease, scale 0.07s ease, color 0.07s ease;
+    transition: transform 0.07s ease, scale 0.07s ease, color 0.07s ease;
 }
 
 .username .username-button:hover {
-  scale: 1.1;
-  text-decoration: underline;
-  color: white;
+    scale: 1.1;
+    text-decoration: underline;
+    color: white;
 }
 
 .username .username-button:active {
-  transform: translate(1px, 1px);
-  text-decoration: none;
+    transform: translate(1px, 1px);
+    text-decoration: none;
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .content {
-  display: flex;
-  padding: 20px;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  margin-top: 50px;
-  margin-inline: 100px;
+    display: flex;
+    padding: 20px;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    margin-top: 50px;
+    margin-inline: 100px;
 }
 
 .left,
 .right {
-  flex: 1;
-  padding: 30px;
-  align-content: center;
-  align-items: center;
+    flex: 1;
+    padding: 30px;
+    align-content: center;
+    align-items: center;
 }
 
 .leaderboard {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: rgb(3, 135, 135);
-  color: white;
-  box-shadow: 5px 5px 0px black;
-  border: 2px solid black;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(3, 135, 135);
+    color: white;
+    box-shadow: 5px 5px 0px black;
+    border: 2px solid black;
 }
 .leaderboard th,
 .leaderboard td {
-  border: 1px solid black;
-  border-radius: 10px;
-  /* width: 150px;  */
-  height: 20px;
-  padding: 10px;
-  text-align: left;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+    border: 1px solid black;
+    border-radius: 10px;
+    /* width: 150px;  */
+    height: 20px;
+    padding: 10px;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .button {
-  display: block;
-  background-color: blue;
-  color: white;
-  cursor: pointer;
-  font-family: Fredoka;
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: transform 0.07s ease, box-shadow 0.07s ease;
-  box-shadow: 3px 3px 0px 1px rgb(0, 0, 0);
-  /* border-radius: 10px; */
+    display: block;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    font-family: Fredoka;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.07s ease, box-shadow 0.07s ease;
+    box-shadow: 3px 3px 0px 1px rgb(0, 0, 0);
+    /* border-radius: 10px; */
 }
 
 .button:hover {
-  background-color: #ffffff;
-  color: #000000;
-  transform: translate(-3px, -3px);
-  box-shadow: 5px 5px 0px 1px rgb(0, 0, 0);
+    background-color: #ffffff;
+    color: #000000;
+    transform: translate(-3px, -3px);
+    box-shadow: 5px 5px 0px 1px rgb(0, 0, 0);
 }
 .button:active {
-  transform: translate(1px, 1px);
-  box-shadow: 1px 1px px 1px rgb(0, 0, 0);
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px px 1px rgb(0, 0, 0);
 }
 
 .section-header {
-  text-align: center;
-  font-family: Fredoka;
-  text-decoration: underline;
+    text-align: center;
+    font-family: Fredoka;
+    text-decoration: underline;
 }
 
 .section-line {
-  width: 88%;
-  margin: 0 auto;
-  border: 1px solid black;
+    width: 88%;
+    margin: 0 auto;
+    border: 1px solid black;
 }
 
 .additional-content {
-  display: flex;
-  justify-content: space-around;
-  /* padding: 0px 20px; */
-  padding: 0;
-  padding-inline: 20px;
+    display: flex;
+    justify-content: space-around;
+    /* padding: 0px 20px; */
+    padding: 0;
+    padding-inline: 20px;
 }
 
 .item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 400px;
-  padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 10px;
 }
 
 .image img {
-  max-width: 400px;
-  max-height: 225px;
-  width: 100%;
-  height: auto;
+    max-width: 400px;
+    max-height: 225px;
+    width: 100%;
+    height: auto;
 }
 
 .text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 
 .title {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .description {
-  font-size: 1em;
-  text-align: center;
+    font-size: 1em;
+    text-align: center;
 }
