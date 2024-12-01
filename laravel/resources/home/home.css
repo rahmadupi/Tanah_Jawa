@@ -1,52 +1,52 @@
 @font-face {
     font-family: "Minecraft";
-    src: url("./fonts/Minecraft.ttf") format("truetype");
+    src: url("../fonts/Minecraft.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: "MinaR";
-    src: url("./fonts/Mina-Regular.ttf") format("truetype");
+    src: url("../fonts/Mina-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: "MinaB";
-    src: url("./fonts/Mina-Bold.ttf") format("truetype");
+    src: url("../fonts/Mina-Bold.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "LeoDemo";
-    src: url("./fonts/LEonardo-Demo-Bold.otf") format("truetype");
+    src: url("../fonts/LEonardo-Demo-Bold.otf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: "LeoSemiDemo";
-    src: url("./fonts/Leonardo-SemiRounded-Demo.otf") format("truetype");
+    src: url("../fonts/Leonardo-SemiRounded-Demo.otf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "LeoRound";
-    src: url("./fonts/Leonardo-Rounded-Demo.otf") format("truetype");
+    src: url("../fonts/Leonardo-Rounded-Demo.otf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "LeoDemoUltra";
-    src: url("./fonts/Leonardo-Demo-Ultralight.otf") format("truetype");
+    src: url("../fonts/Leonardo-Demo-Ultralight.otf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Fredoka";
-    src: url("./fonts/fredoka-one.one-regular.otf") format("truetype");
+    src: url("../fonts/fredoka-one.one-regular.otf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -67,7 +67,7 @@
 }
 
 body {
-    font-family: "MinaR", sans-serif;
+    font-family: "MinaB", sans-serif;
     background-color: var(--background-color);
     width: 100%;
     margin: 0;
@@ -215,12 +215,14 @@ body {
 
 .section-header {
     text-align: center;
-    font-family: Fredoka;
+    font-family: MinaB;
+    font-size: 25px;
     text-decoration: underline;
+    margin: 0;
 }
 
 .section-line {
-    width: 88%;
+    width: 100%;
     margin: 0 auto;
     border: 1px solid black;
 }
