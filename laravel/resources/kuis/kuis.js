@@ -28,14 +28,37 @@ const option_4 = document.getElementById('option-4');
 
 const successForm = document.getElementById('successForm');
 const failForm = document.getElementById('failForm');
+const gameOverMessage = document.getElementById('gameOverMessage');
+const accuracyDisplay = document.getElementById('accuracyDisplay');
+const accuracyPercentage = document.querySelector('.accuracyPercentage');
+const accuracyText = document.querySelector('.accuracyText');
+const statisticForm = document.getElementById('statisticForm');
+const correctStat = document.getElementById('correctStat');
+const incorrectStat = document.getElementById('incorrectStat');
+const streakStat = document.getElementById('streakStat');
+const scoreStat = document.getElementById('scoreStat');
+
+const container2 = document.getElementById('container2');
+const container22 = document.getElementById('container22');
+const tryAgainBtnSuccess = document.getElementById('tryAgainBtnSuccess');
+const tryAgainBtnFail = document.getElementById('tryAgainBtnFail');
+const returnHomeBtnSuccess = document.getElementById('returnHomeBtnSuccess');
+const returnHomeBtnFail = document.getElementById('returnHomeBtnFail');
+
+let accrcyPercentage = 0;
 
 let questions = [];
 let correctIndex;
 let currentQuestion;
 let currentHeart;
 let currentProgress;
-let questionAmmount = 2;
-let success = false;
+let questionAmmount = 5;
+let correctCount = 0;
+let incorrectCount = 0;
+let isSuccess = true;
+let streak = false;
+let streakCount = 0;
+let maxStreak = 0;
 
 backsoundAudio.volume = musicVolumeSlider.value / 100;
 hoverSound.volume = sfxVolumeSlider.value / 100;
@@ -77,6 +100,39 @@ document.querySelectorAll(".option").forEach(option => {
     });
 });
 
+/*
+function loadQuestionsFromCSV(filePath) {
+    fetch(filePath)
+        .then(response => response.text())
+        .then(data => {
+            const lines = data.split("\n"); // Pisahkan setiap baris
+            const headers = lines.shift().split(","); // Ambil header dan abaikan
+            
+            lines.forEach(line => {
+                if (line.trim() !== "") { // Abaikan baris kosong
+                    const values = line.split(",");
+                    const question = {
+                        text: values[0].replace(/"/g, ""), // Ambil kolom "Pertanyaan"
+                        options: [
+                            values[1].replace(/"/g, ""), // Pilihan 1
+                            values[2].replace(/"/g, ""), // Pilihan 2
+                            values[3].replace(/"/g, ""), // Pilihan 3
+                            values[4].replace(/"/g, "")  // Pilihan 4
+                        ],
+                        correctIndex: parseInt(values[5]), // Indeks jawaban benar (0-based)
+                        url: values[6]?.replace(/"/g, "") // URL tambahan (opsional)
+                    };
+                    questions.push(question); // Tambahkan soal ke array questions
+                }
+            });
+
+            console.log("Loaded Questions:", questions); // Debugging
+        })
+        .catch(error => console.error("Error loading CSV file:", error));
+}
+*/
+// loadQuestionsFromCSV("bankSoal.csv");
+/*
 questions.push({
     text: "Apa kepanjangan dari BPUPKI?",
     options: [
@@ -98,6 +154,7 @@ questions.push({
     ],
     correctIndex: 3
 });
+*/
 
 // Fungsi untuk memuat soal dan opsi
 function LoadQuestion(currentQuestion) {
@@ -138,6 +195,48 @@ returnHomeBtn.addEventListener('click', () => {
     window.location.href = 'home.html';
 });
 
+returnHomeBtnSuccess.addEventListener('click', () => {
+    window.location.href = 'home.html';
+});
+returnHomeBtnFail.addEventListener('click', () => {
+    window.location.href = 'home.html';
+});
+
+function resetDisplayScore() {
+    // Atur ulang semua elemen tampilan skor ke keadaan awal
+    successForm.style.display = "none";
+    failForm.style.display = "none";
+    gameOverMessage.style.fontSize = ""; // Reset font size
+    gameOverMessage.style.top = ""; // Reset posisi
+    accuracyDisplay.style.opacity = "0"; // Kembali ke awal
+    accuracyPercentage.style.backgroundImage = ""; // Hapus perubahan gradien
+    accuracyText.textContent = "0%"; // Reset teks ke awal
+
+    // Reset statistik
+    correctStat.textContent = "0";
+    incorrectStat.textContent = "0";
+    streakStat.textContent = "0";
+    scoreStat.textContent = "0";
+
+    // Reset kontainer
+    statisticForm.style.opacity = "0";
+    container2.style.opacity = "0";
+}
+
+
+tryAgainBtnSuccess.addEventListener('click', () => {
+    StartQuiz();
+    PlayBacksoundAudio();
+    successForm.style.display = "none";
+    resetDisplayScore();
+});
+tryAgainBtnFail.addEventListener('click', () => {
+    StartQuiz();
+    PlayBacksoundAudio();
+    failForm.style.display = "none";
+    resetDisplayScore();
+});
+
 settingBtn.addEventListener('click', () => {
     settingForm.style.display = "flex";
     menuForm.style.display = "none";
@@ -167,11 +266,109 @@ function animateHeartSplit() {
         fullHeart.classList.remove('loseHeart');
     }, 1000);
 }
+
+function CalculateScore() {
+    let baseScore = (correctCount / questionAmmount) * 100;
+    console.log('Base Score: ', baseScore);
+
+    let streakBonus = maxStreak * 2; 
+    console.log('Streak Bonus: ', streakBonus);
+
+    accrcyPercentage = baseScore;
+    console.log('Correct Percentage: ', accrcyPercentage);
+
+    targetScore = baseScore + streakBonus;
+    console.log('Total Score: ', targetScore);
+}
+
 function DisplayScore() {
-    if(success){
+    if(isSuccess){
         successForm.style.display = "flex";
+        setTimeout(() => {
+            gameOverMessage.style.fontSize = "2rem";
+            gameOverMessage.style.top = "60px";
+        }, 1000);
+        setTimeout(() => {
+            accuracyDisplay.style.opacity = "100%";
+        }, 1100);
+        setTimeout(() => {
+            let count = 0;
+            const accChart = setInterval(() => {
+                count += 1; 
+                accuracyPercentage.style.backgroundImage = `
+                conic-gradient(
+                    rgb(7, 177, 7) 0% ${count}%,
+                    red ${count}% 100%
+                    )
+                    `;
+                    if (count >= accrcyPercentage) {
+                        clearInterval(accChart); 
+                    }
+                }, 30); 
+                count = 0;
+                const accValue = setInterval(() => {
+                    if (count >= accrcyPercentage) {
+                        clearInterval(accValue); // Hentikan interval jika mencapai target
+                    } else {
+                        count++;
+                        accuracyText.textContent = count + '%'; // Update teks
+                    }
+                }, 30);
+                
+                
+            statisticForm.style.opacity = "100%"
+        }, 1200);
+        setTimeout(() => {
+            let count = 0;
+                const correctInterval = setInterval(() => {
+                if (count >= correctCount) {
+                  clearInterval(correctInterval); // Hentikan interval jika mencapai target
+                } else {
+                    count++;
+                  correctStat.textContent = count; // Update teks
+                }
+            }, 30);
+        }, 1300);
+        setTimeout(() => {
+            let count = 0;
+            incorrectCount = questionAmmount - correctCount;
+            const incorrectInterval = setInterval(() => {
+                if (count >= incorrectCount) {
+                    clearInterval(incorrectInterval); // Hentikan interval jika mencapai target
+                } else {
+                    count++;
+                    incorrectStat.textContent = count; // Update teks
+                }
+            }, 30);
+        }, 1400);
+        setTimeout(() => {
+            let count = 0;
+            const streakInterval = setInterval(() => {
+                if (count >= maxStreak) {
+                    clearInterval(streakInterval); // Hentikan interval jika mencapai target
+                } else {
+                    count++;
+                    streakStat.textContent = count; // Update teks
+                }
+            }, 30);
+        }, 1500);
+        setTimeout(() => {
+            let count = 0;
+            const scoreInterval = setInterval(() => {
+                if (count >= targetScore) {
+                    clearInterval(scoreInterval); // Hentikan interval jika mencapai target
+                } else {
+                    count++;
+                    scoreStat.textContent = count; // Update teks
+                }
+            }, 30);
+        }, 1600);
+        setTimeout(() => {
+            container2.style.opacity = "100%";
+        }, 2500);
     }else{
         failForm.style.display = "flex";
+        container22.style.opacity = "100%";
     }
 }
 
@@ -187,25 +384,24 @@ function PlayinCorrectSound() {
 
 // Fungsi untuk jawaban yang benar
 function correctAns() {
-    // alert('Correct!');
-    
-    // Pindah ke soal berikutnya
-    currentQuestion++;
-  
-    // Jika sudah sampai soal terakhir, tampilkan skor dan durasi
-    if (currentQuestion == questionAmmount) {
-        PlayCorrectSound();
-        currentProgress += 100 / questionAmmount;
-        progress.style.width = `${currentProgress}%`;
-        // stopTimer();
-        success = true;
-        DisplayScore(); // Tampilkan skor
-    } else {
-        PlayCorrectSound();
-        correctIndex = LoadQuestion(currentQuestion); // Memuat soal selanjutnya
-        currentProgress += 100 / questionAmmount;
-        progress.style.width = `${currentProgress}%`;
+    PlayCorrectSound();
+    correctCount++;
+    currentProgress += 100 / questionAmmount;
+    progress.style.width = `${currentProgress}%`;
+
+    if(streak){
+        streakCount++;
+    }else{
+        streak = true;
+        streakCount = 1;
     }
+
+    if(streakCount > maxStreak){
+        maxStreak = streakCount;
+    }
+
+    console.log('Streak Count: ',streakCount);
+    // stopTimer();        
   }
 
 // Fungsi untuk jawaban yang salah
@@ -214,7 +410,16 @@ function wrongAns() {
     currentHeart--;
     heartAmmount.textContent = currentHeart;
     animateHeartSplit();
+
+    if(streak){
+        streak = false;
+        streakCount = 0;
+    }
+
+    console.log('Streak Count: ',streakCount);
+
     if(currentHeart < 1){
+        isSuccess = false;
         DisplayScore();
     }
 }
@@ -225,8 +430,18 @@ function CheckAnswer(event) {
   if (clickedOption.classList.contains('option')) {
     const clickedIndex = parseInt(clickedOption.dataset.index, 10);
 
-    const isCorrect = clickedIndex === correctIndex;
+    currentQuestion++;
+    console.log('Current Question:', currentQuestion); // Debug
+    console.log('Question Ammount:', questionAmmount);
+    const isCorrect = clickedIndex == correctIndex;
     isCorrect ? correctAns() : wrongAns();
+    if(currentQuestion === questionAmmount){
+        CalculateScore();
+        DisplayScore();
+    }else {
+        correctIndex = LoadQuestion(currentQuestion);
+        console.log('Correct Index: ', correctIndex);
+    }
   }
 }
 
@@ -238,12 +453,22 @@ function setUpOptions() {
 }
 // Fungsi untuk memulai kuis
 function StartQuiz() {
+    correctCount = 0;
+    incorrectCount = 0;
+    maxStreak = 0;
+    streakCount = 0;
+    isSuccess = true;
+    streak = false;
+    targetScore = 0;
+    accrcyPercentage = 0;
+
     currentHeart = 5;
     currentProgress = 0;
     heartAmmount.textContent = currentHeart;
     progress.style.width = `${currentProgress}%`;
     currentQuestion = 0; // Indeks soal saat ini
     correctIndex = LoadQuestion(currentQuestion); // Memuat soal pertama dan mendapatkan indeks jawaban yang benar
+    console.log('Correct Index: ', correctIndex);
     setUpOptions(); // Menyiapkan event listener untuk jawaban
     
     // Jika sudah sampai soal terakhir, tampilkan skor
@@ -252,5 +477,14 @@ function StartQuiz() {
     // }
 }
 
-// Panggil fungsi untuk memulai kuis
-StartQuiz();
+fetch('ambilSoal.php')
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(question => {
+            questions.push(question);
+            console.log(questions);
+        });
+        
+        StartQuiz();
+    })
+    .catch(error => console.error('Error:', error));
