@@ -5,99 +5,223 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="../css/font.css" />
     <script src="home.js" defer></script>
   </head>
   <body>
     <div class="container">
-      <div class="header">
-        <div class="menu">
-          <button id="menuButton">&#9776;</button>
+        <div div class="header">
+            <div class="menu">
+                <img src="./Logo.png" >
+                <a href="./">Artikel</a>
+                <a href="./">Leaderboard</a>
+
+            </div>
+            <div class="username">
+                <button id="usernameButton" class="username-button">Guest</button>
+                <div id="dropdown" class="dropdown-content">
+                    <a href="/">Login</a>
+                    <a href="/">Register</a>
+                    <button id="logout_button">Logout</button>
+                </div>
+            </div>
         </div>
-        <div class="username">
-          <button id="usernameButton" class="username-button">Username</button>
-          <div id="dropdown" class="dropdown-content">
-            <button>Logout</button>
-          </div>
-        </div>
-      </div>
-      <div class="main">
-        <div class="content">
-          <div class="left">
-            <button class="button">Take Quiz</button>
-            <button class="button">Learn</button>
-          </div>
-          <div class="right">
-            <table class="leaderboard">
-              <thead>
-                <tr>
-                  <th>Username</th>
-                  <th>Nilai</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>user1</td>
-                  <td>90</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>user2</td>
-                  <td>85</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="main">
+            <div class="main-inner">
+                <div class="content">
+                    <div class="main-content">
+                        <h1>Kuis Sejarah</h1>
+                        <h2>Indonesia</h2>
+                        <button class="button">Take Quiz</button>
+                        <button class="button">Learn</button>
+                    </div>
+                    <!-- <div class="right">
+                        <table class="leaderboard">
+                        <thead>
+                            <tr>
+                            <th>Username</th>
+                            <th>Nilai</th>
+                            <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboard-value">
+                            <tr>
+                            <td>user1</td>
+                            <td>90</td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <td>user2</td>
+                            <td>85</td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                            <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div> -->
+                </div>
+            </div>
         </div>
         <div class="section-header">
-          <hr class="section-line">
-          <h2>Artikel Baru</h2>
+            <hr class="section-line">
         </div>
-        <div class="additional-content">
-          <div class="item">
-              <div class="image">
-                  <img src="https://via.placeholder.com/400x225" alt="Placeholder Image">
-              </div>
-              <div class="text">
-                  <div class="title">Title 1</div>
-                  <div class="description">Description 1</div>
-              </div>
-          </div>
-          <div class="item">
-              <div class="image">
-                  <img src="https://via.placeholder.com/400x225" alt="Placeholder Image">
-              </div>
-              <div class="text">
-                  <div class="title">Title 2</div>
-                  <div class="description">Description 2</div>
-              </div>
-          </div>
-          <div class="item">
-              <div class="image">
-                  <img src="https://via.placeholder.com/400x225" alt="Placeholder Image">
-              </div>
-              <div class="text">
-                  <div class="title">Title 3</div>
-                  <div class="description">Description 3</div>
-              </div>
-          </div>
-      </div>
+        <div class="third" id="leaderboard">
+            <div class="section-header">
+                <div class="section-title">
+                    <hr class="section-line">
+                    <h4>Leaderboard</h4>
+                    <hr class="section-line">
+                </div>
+            </div>
+            <div class="additional-content">
+                <table class="leaderboard">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Total Nilai</th>
+                            <th>Tanggal Kuis Terakhir</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-value">
+                        <tr>
+                            <td>user1</td>
+                            <td>90</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>user2</td>
+                            <td>85</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="second">
+            <div class="section-header">
+                <!-- <hr class="section-line"> -->
+                <div class="section-title">
+                    <h4>Artikel</h4>
+                    <hr class="section-line">
+                    <a href="">Buka Halaman Artikel&#x1F517</a>
+                </div>
+            </div>
+            <div class="additional-content">
+                <div class="item">
+                    <div class="image">
+                        <img src="https://via.placeholder.com/400x225" alt="Placeholder Image">
+                    </div>
+                    <div class="text">
+                        <div class="title"><h4>Title 1</h4></div>
+                        <div class="description"><p>Description 1<p></div>
+                    </div>
+                    <button class="button2">Baca</button>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="https://via.placeholder.com/400x225" alt="Placeholder Image">
+                    </div>
+                    <div class="text">
+                        <div class="title"><h4>Title 1</h4></div>
+                        <div class="description"><p>Description 1<p></div>
+                    </div>
+                    <button class="button2">Baca</button>
+                </div>
+                <div class="item">
+                    <div class="image">
+                        <img src="https://via.placeholder.com/400x225" alt="Placeholder Image">
+                    </div>
+                    <div class="text">
+                        <div class="title"><h4>Title 1</h4></div>
+                        <div class="description"><p>dfsfsdfsdfsdfsdfsd dfsfsdfsdfsdfsdfsddfsfsdfsdfsdfsdfsddfsfsdfsdfsdfsdfsd1<p></div>
+                    </div>
+                    <button class="button2">Baca</button>
+                </div>
+            </div>
+        </div>
     </div>
+    <div id="logout_modal" class="modal">
+        <div class="modal-content">
+            <p>Beneran Logout?</p>
+            <form method="post" action="">
+                <input type="hidden" name="action" value="logout">
+                <button type="submit" class="button2">Yes</button>
+                <button type="button" id="cancel_button" class="button2">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        var modal = document.getElementById("logout_modal");
+        var logout_button = document.getElementById("logout_button");
+        var cancel_button = document.getElementById("cancel_button");
+
+        logout_button.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        cancel_button.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        var currentIndex = 0;
+      var items = document.querySelectorAll('.carousel-item');
+      var indicators = document.querySelectorAll('.carousel-indicators button');
+
+      function showSlide(index) {
+          items.forEach((item, i) => {
+              item.style.transform = `translateX(-${index * 100}%)`;
+              indicators[i].classList.toggle('active', i === index);
+          });
+      }
+
+      function nextSlide() {
+          currentIndex = (currentIndex + 1) % items.length;
+          showSlide(currentIndex);
+      }
+
+      indicators.forEach((indicator, index) => {
+          indicator.addEventListener('click', () => {
+              currentIndex = index;
+              showSlide(currentIndex);
+          });
+      });
+
+      setInterval(nextSlide, 5000);
+    </script>
   </body>
 </html>

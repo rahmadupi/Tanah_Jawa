@@ -1,0 +1,66 @@
+@font-face {
+    font-family: "Minecraft";
+    src: url("../fonts/Minecraft.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "MinaR";
+    src: url("../fonts/Mina-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "MinaB";
+    src: url("../fonts/Mina-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "LeoDemo";
+    src: url("../fonts/LEonardo-Demo-Bold.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "LeoSemiDemo";
+    src: url("../fonts/Leonardo-SemiRounded-Demo.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "LeoRound";
+    src: url("../fonts/Leonardo-Rounded-Demo.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "LeoDemoUltra";
+    src: url("../fonts/Leonardo-Demo-Ultralight.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("../fonts/fredoka-one.one-regular.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "halodek";
+    src: url("../fonts/Halo_Dek.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "winterselfie";
+    src: url("../fonts/Winter_Selfie.otf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
