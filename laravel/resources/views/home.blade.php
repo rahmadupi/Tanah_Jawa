@@ -18,7 +18,7 @@
             </div>
             <div class="username">
                 @auth
-                    <button id="usernameButton" class="username-button">{{ Auth::user()->name }}</button>
+                    <button id="usernameButton" class="username-button">{{ Auth::user()->username }}</button>
                     <div id="dropdown" class="dropdown-content">
                         <form method="post" action="{{ url('/logout') }}">
                             @csrf
@@ -63,13 +63,14 @@
                             </tr>
                         </thead>
                         <tbody id="leaderboard-value">
-                            @foreach ($leaderboard as $entry)
+                            @if(isset($leaderboard))
+                                @foreach ($leaderboard as $entry)
                                 <tr>
-                                    <td>{{ $entry->username }}</td>
-                                    <td>{{ $entry->total_nilai }}</td>
-                                    <td>{{ $entry->tanggal_kuis_terakhir }}</td>
+                                    <td>{{ $entry->user_id.username}}</td>
+                                    <td>{{ $entry->score }}</td>
                                 </tr>
-                            @endforeach
+                                @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>
@@ -84,7 +85,7 @@
                     </div>
                 </div>
                 <div class="additional-content">
-                    @foreach ($articles as $article)
+                    {{-- @foreach ($articles as $article)
                         <div class="item">
                             <div class="image">
                                 <img src="{{ $article->image_url }}" alt="Placeholder Image">
@@ -95,7 +96,7 @@
                             </div>
                             <button class="button2">Baca</button>
                         </div>
-                    @endforeach
+                    @endforeach --}}
                 </div>
             </div>
         </div>
