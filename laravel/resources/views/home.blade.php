@@ -80,7 +80,7 @@
                     <div class="section-title">
                         <h4>Artikel</h4>
                         <hr class="section-line">
-                        <a href="{{ url('/') }}">Buka Halaman Artikel&#x1F517</a>
+                        <a href="{{ url('/artikel') }}">Buka Halaman Artikel&#x1F517</a>
                     </div>
                 </div>
                 <div class="additional-content">
