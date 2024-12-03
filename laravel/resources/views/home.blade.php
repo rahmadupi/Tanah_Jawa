@@ -6,7 +6,6 @@
     <title>Home</title>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
-    <script src="{{ asset('js/scripts.js') }}" defer></script>
 </head>
 <body>
     <div class="container">
@@ -34,18 +33,22 @@
                 @endauth
             </div>
         </div>
-        <div class="content">
-            <div class="main-content">
-                <h1>Kuis Sejarah</h1>
-                <h2>Indonesia</h2>
-                <button class="button">Take Quiz</button>
-                <button class="button">Learn</button>
+        <div class="main">
+            <div class="main-inner">
+                <div class="content">
+                    <div class="main-content">
+                        <h1>Kuis Sejarah</h1>
+                        <h2>Indonesia</h2>
+                        <button class="button">Take Quiz</button>
+                        <button class="button">Learn</button>
+                    </div>
+                </div>
             </div>
-            <div class="section-header">
-                <hr class="section-line">
-            </div>
-
-            <div class="third" id="leaderboard">
+        </div>
+        <div class="section-header">
+            <hr class="section-line">
+        </div>
+        <div class="third" id="leaderboard">
                 <div class="section-header">
                     <div class="section-title">
                         <hr class="section-line">
@@ -63,14 +66,12 @@
                             </tr>
                         </thead>
                         <tbody id="leaderboard-value">
-                            @if(isset($leaderboard))
                                 @foreach ($leaderboard as $entry)
                                 <tr>
                                     <td>{{ $entry->user_id.username}}</td>
                                     <td>{{ $entry->score }}</td>
                                 </tr>
                                 @endforeach
-                            @endif
                         </tbody>
                     </table>
                 </div>
@@ -100,6 +101,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</body>
+        <script src="{{ asset('js/scripts.js') }}" defer></script>
+    </body>
 </html>
