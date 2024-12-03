@@ -14,7 +14,12 @@
     --font3: 3;
 }
 
+html {
+    scroll-behavior: smooth !important;
+}
+
 body {
+    scroll-behavior: smooth;
     font-family: "MinaB", sans-serif;
     background-color: var(--background-color);
     width: 100%;
@@ -191,7 +196,7 @@ body {
     background-image: url("../assets/background.jpg");
     background-position: center;
     z-index: -5;
-    overflow: hidden;
+    /* overflow: hidden; */
     box-sizing: border-box;
     /* height: 100%; */
     /* background-size: cover; */
@@ -335,7 +340,7 @@ body {
 .section-line {
     display: flex;
     /* width: 100%; */
-    overflow: hidden;
+    /* overflow: hidden; */
     box-sizing: border-box;
     margin: 0;
     border: 3px solid black;
@@ -459,16 +464,23 @@ body {
     text-align: center;
 }
 
+.outer-modal {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.4);
+}
 .modal {
     display: none;
-    position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
@@ -484,13 +496,75 @@ body {
     box-shadow: #000000 3px 3px 0px;
 }
 
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1);
+        /* opacity: 1; */
+    }
+}
+
+/* Keyframes for scale-out animation */
+@keyframes scaleOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        /* opacity: 0; */
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        /* transform: scale(0); */
+        opacity: 0;
+    }
+    to {
+        /* transform: scale(1); */
+        opacity: 1;
+    }
+}
+
+/* Keyframes for scale-out animation */
+@keyframes fadeOut {
+    from {
+        /* transform: scale(1); */
+        opacity: 1;
+    }
+    to {
+        /* transform: scale(0); */
+        opacity: 0;
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.2s ease;
+}
+
+.scale-out {
+    animation: scaleOut 0.2s ease;
+}
+
+.fade-in {
+    animation: fadeIn 0.2s ease;
+}
+
+.fade-out {
+    animation: fadeOut 0.2s ease;
+}
+
 .third {
     margin-top: 10px;
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: sta;
+    align-items: center;
 }
 
 .leaderboard {
@@ -512,94 +586,4 @@ body {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-
-.carousel {
-    /* position: relative; */
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    overflow: hidden;
-}
-
-.carousel-inner {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.carousel-indicators button {
-    background-color: #888;
-    border: none;
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.carousel-indicators button.active {
-    background-color: #000;
-}
-.carousel-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 20px 0;
-}
-
-.carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-}
-
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.carousel-indicators button {
-    background-color: #888;
-    border: none;
-    width: 10px;
-    height: 10px;
-    margin: 0 5px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.carousel-indicators button.active {
-    background-color: #000;
-}
-
-.second_third {
-    display: flex;
-    justify-content: baseline;
-    align-items: center;
-    /* margin-top: 50px; */
-    align-items: start;
 }

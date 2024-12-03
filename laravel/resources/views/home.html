@@ -12,7 +12,7 @@
     <div class="container">
         <div  class="header">
             <div class="menu">
-                <img src="../../public/assets/Logo.png" >
+                <img id="logo" href="#" src="../../public/assets/Logo.png" >
                 <a href="#artikel">Artikel</a>
                 <a href="#leaderboard">Leaderboard</a>
 
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="main">
+        <div class="main" id="main">
             <div class="main-inner">
                 <div class="content">
                     <div class="main-content">
@@ -131,14 +131,16 @@
             </div>
         </div>
     </div>
-    <div id="logout_modal" class="modal">
-        <div class="modal-content">
-            <p>Beneran Logout?</p>
-            <form method="post" action="">
-                <input type="hidden" name="action" value="logout">
-                <button type="submit" class="button2">Yes</button>
-                <button type="button" id="cancel_button" class="button2">Cancel</button>
-            </form>
+    <div class="outer-modal" id="modal-parrent">
+        <div id="logout_modal" class="modal">
+            <div class="modal-content">
+                <p>Beneran Logout?</p>
+                <form method="post" action="">
+                    <input type="hidden" name="action" value="logout">
+                    <button type="submit" class="button2">Yes</button>
+                    <button type="button" id="cancel_button" class="button2">Cancel</button>
+                </form>
+            </div>
         </div>
     </div>
     <!-- <script>

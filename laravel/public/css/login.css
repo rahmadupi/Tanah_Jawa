@@ -1,4 +1,3 @@
-
 :root {
     --background-color: aqua;
     --color1: rgb(255, 255, 255);
@@ -135,4 +134,34 @@ body {
 .button:active {
     transform: translate(1px, 1px);
     box-shadow: 1px 1px 0px 1px rgb(0, 0, 0);
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1);
+        /* opacity: 1; */
+    }
+}
+
+/* Keyframes for scale-out animation */
+@keyframes scaleOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        /* opacity: 0; */
+    }
+}
+.scale-in {
+    animation: scaleIn 0.2s ease;
+}
+
+.scale-out {
+    animation: scaleOut 0.2s ease;
 }

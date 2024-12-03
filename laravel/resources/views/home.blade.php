@@ -11,7 +11,7 @@
     <div class="container">
         <div class="header">
             <div class="menu">
-                <img src="{{ asset('assets/Logo.png') }}" alt="Logo">
+                <img src="{{ asset('assets/Logo.png') }}" alt="Logo" id="logo" href="#">
                 <a href="{{ url('#artikel') }}">Artikel</a>
                 <a href="{{ url('#leaderboard') }}">Leaderboard</a>
             </div>
@@ -21,19 +21,19 @@
                     <div id="dropdown" class="dropdown-content">
                         <form method="post" action="{{ url('/logout') }}">
                             @csrf
-                            <button type="submit">Logout</button>
+                            <button id="logout_button" type="submit">Logout</button>
                         </form>
                     </div>
                 @else
                     <button id="usernameButton" class="username-button">Guest</button>
                     <div id="dropdown" class="dropdown-content">
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
+                        <a id="login_button" href="{{ url('/login') }}">Login</a>
+                        <a id="register_button" href="{{ url('/register') }}">Register</a>
                     </div>
                 @endauth
             </div>
         </div>
-        <div class="main">
+        <div class="main" id="main">
             <div class="main-inner">
                 <div class="content">
                     <div class="main-content">
@@ -101,6 +101,18 @@
                 </div>
             </div>
         </div>
-        <script src="{{ asset('js/scripts.js') }}" defer></script>
+        <div class="outer-modal" id="modal-parrent">
+            <div id="logout_modal" class="modal">
+                <div class="modal-content">
+                    <p>Beneran Logout?</p>
+                    <form method="post" action="">
+                        <input type="hidden" name="action" value="logout">
+                        <button type="submit" class="button2">Yes</button>
+                        <button type="button" id="cancel_button" class="button2">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="{{ asset('js/home.js') }}" defer></script>
     </body>
 </html>
