@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="home.css" />
-    <link rel="stylesheet" href="../css/font.css" />
-    <script src="home.js" defer></script>
+    <link rel="stylesheet" href="../../public/css/home.css" />
+    <link rel="stylesheet" href="../../public/css/font.css" />
+    <script src="../../public/js/home.js" defer></script>
   </head>
   <body>
     <div class="container">
         <div div class="header">
             <div class="menu">
-                <img src="./Logo.png" >
-                <a href="./">Artikel</a>
-                <a href="./">Leaderboard</a>
+                <img src="../../public/assets/Logo.png" >
+                <a href="#artikel">Artikel</a>
+                <a href="#leaderboard">Leaderboard</a>
 
             </div>
             <div class="username">
@@ -126,7 +126,7 @@
                 </table>
             </div>
         </div>
-        <div class="second">
+        <div class="second" id="artikel">
             <div class="section-header">
                 <!-- <hr class="section-line"> -->
                 <div class="section-title">
@@ -179,7 +179,7 @@
             </form>
         </div>
     </div>
-    <script>
+    <!-- <script>
         var modal = document.getElementById("logout_modal");
         var logout_button = document.getElementById("logout_button");
         var cancel_button = document.getElementById("cancel_button");
@@ -222,6 +222,6 @@
       });
 
       setInterval(nextSlide, 5000);
-    </script>
+    </script> -->
   </body>
 </html>

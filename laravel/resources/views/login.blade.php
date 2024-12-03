@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="register.css" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
     <script src="https://unpkg.com/css-doodle@0.25.0/css-doodle.min.js"></script>
 </head>
 <body>
@@ -19,7 +20,7 @@
                     @r(30, 30),
                     radial-gradient(
                         @p(#00E8E8) 100%,
-                        transparent 0%
+                        transparent 10%
                     ) @r(100%) @r(100%) / @r(1%, 3%) @lr no-repeat
                 );
 
@@ -54,15 +55,14 @@
     </div>
     <div class="main">
         <div class="login_register">
-            <h2>REGISTER<h2>
-            <form>
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="email" name="email" placeholder="Email" required>
+            <h2>LOGIN</h2>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+                <input type="text" name="username" placeholder="Username atau Email" required>
                 <input type="password" name="password" placeholder="Password" required>
-                <button type="submit" class="button">Buat Akun</button>
+                <button type="submit" class="button">Login</button>
             </form>
-            <!-- <a href="register.html">Register</a> -->
-             <p>Sudah punya akun? <a href="">login</a></p>
+            <p>Tidak punya akun? <a href="{{ route('register') }}">Register</a></p>
         </div>
     </div>
 </body>

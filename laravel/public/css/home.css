@@ -188,7 +188,7 @@ body {
     display: flex;
     flex-direction: column;
     /* background-color: #000000; */
-    background-image: url("./assets/background.jpg"); /* Set the background image */
+    background-image: url("../assets/background.jpg"); /* Set the background image */
     background-position: center;
     z-index: -5;
     overflow: hidden;
@@ -329,6 +329,7 @@ body {
     font-size: 25px;
     /* text-decoration: underline; */
     margin: 0;
+    /* margin-inline: 9%; */
 }
 
 .section-line {
@@ -350,6 +351,7 @@ body {
     align-content: center;
     padding-inline: 10vw;
     margin: 0;
+    margin-inline: 5%;
     margin-block: 10px;
 }
 
@@ -400,7 +402,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 300px;
+    width: 23%;
     padding: 10px;
     border: 3px solid black;
     margin-inline: 20px;
@@ -408,6 +410,12 @@ body {
     box-shadow: 3px 3px 0px black;
     margin-bottom: 40px;
     box-sizing: border-box;
+    /* position: relative; */
+    /* height: 100%; */
+}
+
+.item .button2 {
+    display: inline-block;
 }
 
 .image img {
@@ -419,10 +427,10 @@ body {
 }
 
 .text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* padding: 10px; */
+    width: 100%;
+    box-sizing: border-box;
+    /* overflow: hidden;*/
+    height: 100%;
 }
 
 .title h4 {
@@ -430,11 +438,20 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
     margin: 0;
+    text-align: center;
 }
 
 .description p {
-    margin: 0;
-    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8; /* Limit to 8 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: calc(
+        1.2em * 8
+    ); /* Adjust the line height (1.2em) and number of lines (8) */
+    line-height: 1.2em; /* Adjust the line height */
+    word-wrap: break-word; /* Ensure long words break to fit within the container */
 }
 
 .description {

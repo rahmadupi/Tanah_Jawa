@@ -1,16 +1,3 @@
-@font-face {
-    font-family: "Fredoka";
-    src: url("../fonts/fredoka-one.one-regular.otf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "MinaB";
-    src: url("../fonts/Mina-Bold.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
 
 :root {
     --background-color: aqua;
