@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Artikel;
+use App\Models\Article;
 
-class ArtikelController extends Controller
+class ArticleController extends Controller
 {
     public function index()
     {
-        $artikels = Artikel::all();
-        return view('artikel.index', compact('artikels'));
+        $artikels = Article::all();
+        return view('article.index', compact('article'));
     }
 }
