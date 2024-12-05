@@ -11,13 +11,11 @@ class HomeController extends Controller
     public function index()
     {
         $leaderboard = score::query()
-        -> ORDERBY ('score', 'DESC')
-        -> LIMIT (5)
+        ->join('users', 'scores.user_id', '=', 'users.id')
+        ->select('users.username', 'scores.score', 'scores.last_take')
+        ->orderByDesc('scores.score')
         ->get();
-
-        $articles = Article::orderBy('index', 'desc')->limit(3)->get();
-
-        return view('home', compact('leaderboard','articles'));
-        // return view('home', compact('articles'));
+        $articles = Article::orderBy('created_at', 'desc')->limit(3)->get();
+        return view('home', compact('leaderboard', 'articles'));
     }
 }

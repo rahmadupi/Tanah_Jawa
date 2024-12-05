@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('scores', function (Blueprint $table) {
             $table->id();
             $table->integer('score');
-            $table->foreignId('user_id') -> ON ('users');
-            $table->date('last_take');
+            $table->timestamp('last_take');
+            $table->foreignId('user_id')->references('id')->on('users');
         });
     }
 
