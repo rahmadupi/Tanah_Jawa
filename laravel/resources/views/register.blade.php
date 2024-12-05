@@ -67,5 +67,8 @@
             <p>Sudah punya akun? <a href="{{ route('login') }}">Login</a></p>
         </div>
     </div>
+    <div class="home-button">
+        <a href="{{ url('/') }}" class="button2">Home</a>
+    </div>
 </body>
 </html>

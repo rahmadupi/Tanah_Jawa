@@ -74,5 +74,8 @@
             </div>
         </div>
     </div>
+    <div class="home-button">
+        <a href="{{ url('/') }}" class="button2">Home</a>
+    </div>
 </body>
 </html>

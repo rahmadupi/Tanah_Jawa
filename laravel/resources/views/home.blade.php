@@ -40,8 +40,8 @@
                     <div class="main-content">
                         <h1>Kuis Sejarah</h1>
                         <h2>Indonesia</h2>
-                        <button class="button">Take Quiz</button>
-                        <button class="button">Learn</button>
+                        <button class="button"><a href="{{ url('/') }}">Take Quiz</a></button>
+                        <button class="button"><a href="{{ url('/article') }}">Learn</a></button>
                     </div>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                     <div class="section-title">
                         <h4>Artikel</h4>
                         <hr class="section-line">
-                        <a href="{{ url('/artikel') }}">Buka Halaman Artikel&#x1F517</a>
+                        <a href="{{ url('/article') }}">Buka Halaman Artikel&#x1F517</a>
                     </div>
                 </div>
                 <div class="additional-content">
