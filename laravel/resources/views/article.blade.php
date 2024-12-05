@@ -58,7 +58,7 @@
         <div class="main">
             <div class="additional-content">
                 @foreach ($articles as $article)
-                    <div class="item">
+                    <div class="item"  id="{{ $article->index }}">
                         <div class="image">
                             <img src="{{ asset($article->gambar) }}" alt="Placeholder Image" />
                         </div>
