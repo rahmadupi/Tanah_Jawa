@@ -10,6 +10,7 @@ class score extends Model
     protected $fillable = [
         'score',
         'user_id',
+        'last_take'
     ];
     public function user():BelongsTo
     {

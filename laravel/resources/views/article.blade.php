@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artikel</title>
-    <link rel="stylesheet" href="{{ asset('css/artikel.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/article.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/font.css') }}" />
     <script src="https://unpkg.com/css-doodle@0.25.0/css-doodle.min.js"></script>
+    <link rel="icon" href="{{ asset('assets/Logo.png') }}" type="image/x-icon">
 </head>
 <body>
     <div class="background-container">
@@ -59,12 +60,12 @@
                 @foreach ($articles as $article)
                     <div class="item">
                         <div class="image">
-                            <img src="{{ $article->image_url }}" alt="Placeholder Image" />
+                            <img src="{{ asset($article->gambar) }}" alt="Placeholder Image" />
                         </div>
                         <div class="text">
-                            <div class="title"><h4>{{ $article->title }}</h4></div>
+                            <div class="title"><h4>{{ $article->judul }}</h4></div>
                             <div class="description">
-                                <p>{{ $article->description }}</p>
+                                <p>{{ $article->deskripsi }}</p>
                             </div>
                         </div>
                         <button class="button2">Baca</button>

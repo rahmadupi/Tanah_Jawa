@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('score');
             $table->foreignId('user_id') -> ON ('users');
+            $table->date('last_take');
         });
     }
 

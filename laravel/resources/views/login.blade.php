@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
     <script src="https://unpkg.com/css-doodle@0.25.0/css-doodle.min.js"></script>
+    <link rel="icon" href="{{ asset('assets/Logo.png') }}" type="image/x-icon">
 </head>
 <body>
     <div class="background-container">

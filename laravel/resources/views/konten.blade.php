@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $content->title }}</title>
     <link rel="stylesheet" href="{{ asset('css/konten.css') }}">
+    <link rel="icon" href="{{ asset('assets/Logo.png') }}" type="image/x-icon">
 </head>
 <body>
     <div class="background-container">
@@ -54,9 +55,9 @@
     <div class="main">
         <div class="inner-main">
             <div class="konten-inner">
-                <h2>{{ $content->title }}</h2>
-                <img src="{{ $content->image_url }}" alt="Placeholder Image">
-                <p>{!! nl2br(e($content->text)) !!}</p>
+                <h2>{{ $article->judul }}</h2>
+                <img src="{{ asset($article->gambar) }}" alt="Placeholder Image">
+                <p>{!! nl2br(e($article->konten)) !!}</p>
             </div>
         </div>
     </div>
