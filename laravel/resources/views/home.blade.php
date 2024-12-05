@@ -6,6 +6,7 @@
     <title>Home</title>
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+    <link rel="icon" href="{{ asset('assets/Logo.png') }}" type="image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -62,17 +63,17 @@
                             <tr>
                                 <th>Username</th>
                                 <th>Total Nilai</th>
-                                <th>Tanggal Kuis Terakhir</th>
+                                <th>Last take</th>
                             </tr>
                         </thead>
                         <tbody id="leaderboard-value">
-                                @foreach ($leaderboard as $entry)
+                                {{--@foreach ($leaderboard as $entry)
                                 <tr>
                                     <td>{{ $entry->username}}</td>
                                     <td>{{ $entry->score }}</td>
                                     <td>{{ $entry->last_take }}</td>
                                 </tr>
-                                @endforeach
+                                @endforeach--}}
                         </tbody>
                     </table>
                 </div>
@@ -87,18 +88,19 @@
                     </div>
                 </div>
                 <div class="additional-content">
-                    {{-- @foreach ($articles as $article)
+                    @foreach ($articles as $article)
                         <div class="item">
                             <div class="image">
-                                <img src="{{ $article->image_url }}" alt="Placeholder Image">
+                            <!-- asset('assets/Logo.png') -->
+                                <img src="{{ asset($article->gambar) }}" alt="Placeholder Image">
                             </div>
                             <div class="text">
-                                <div class="title"><h4>{{ $article->title }}</h4></div>
-                                <div class="description"><p>{{ $article->description }}</p></div>
+                                <div class="title"><h4>{{ $article->judul }}</h4></div>
+                                <div class="description"><p>{{ $article->deskripsi }}</p></div>
                             </div>
                             <button class="button2">Baca</button>
                         </div>
-                    @endforeach --}}
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -11,6 +11,7 @@ class Score extends Model
         'score',
         'last_take',
         'user_id',
+        'last_take'
     ];
 
     public function user(): BelongsTo
