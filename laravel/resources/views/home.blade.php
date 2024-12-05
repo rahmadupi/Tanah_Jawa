@@ -68,8 +68,9 @@
                         <tbody id="leaderboard-value">
                                 @foreach ($leaderboard as $entry)
                                 <tr>
-                                    <td>{{ $entry->user_id.username}}</td>
+                                    <td>{{ $entry->username}}</td>
                                     <td>{{ $entry->score }}</td>
+                                    <td>{{ $entry->last_take }}</td>
                                 </tr>
                                 @endforeach
                         </tbody>

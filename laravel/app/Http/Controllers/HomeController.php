@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\score;
 use Illuminate\Http\Request;
 
@@ -10,8 +11,12 @@ class HomeController extends Controller
     public function index()
     {
         $leaderboard = score::query()
-        -> ORDERBY ('score', 'DESC')
-        -> LIMIT (5);
+        ->join('users', 'scores.user_id', '=', 'users.id')
+        ->select('users.username', 'scores.score', 'scores.last_take')
+        ->orderByDesc('scores.score')
+        ->get();
+        $articles = Article::orderBy('created_at', 'desc')->limit(3)->get();
         return view('home', compact('leaderboard'));
+        return view('home', compact('articles'));
     }
 }

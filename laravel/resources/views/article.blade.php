@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artikel</title>
-    <link rel="stylesheet" href="{{ asset('css/artikel.css') }}" />
+    <title>Article</title>
+    <link rel="stylesheet" href="{{ asset('css/article.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/font.css') }}" />
     <script src="https://unpkg.com/css-doodle@0.25.0/css-doodle.min.js"></script>
 </head>
