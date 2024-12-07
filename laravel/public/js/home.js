@@ -123,3 +123,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+function logId(event, id) {
+    event.preventDefault(); // Prevent the form from submitting immediately
+    console.log("Article ID:", id);
+    event.target.submit(); // Submit the form after logging the ID
+}

@@ -40,8 +40,8 @@
                     <div class="main-content">
                         <h1>Kuis Sejarah</h1>
                         <h2>Indonesia</h2>
-                        <button class="button"><a href="{{ url('/') }}">Take Quiz</a></button>
-                        <button class="button"><a href="{{ url('/article') }}">Learn</a></button>
+                        <a class="button" href="{{ url('/') }}">Take Quiz</a>
+                        <a class="button" href="{{ url('/article') }}">Learn</a>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,11 @@
                                 <div class="title"><h4>{{ $article->judul }}</h4></div>
                                 <div class="description"><p>{{ $article->deskripsi }}</p></div>
                             </div>
-                            <button class="button2">Baca</button>
+                            <form method="POST" action="{{ route('konten.show') }}">
+                                @csrf
+                                <input type="hidden" name="id" value="{{ $article->id }}" >
+                                <button type="submit" class="button2">Baca</button>
+                            </form>
                         </div>
                     @endforeach
                 </div>

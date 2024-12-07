@@ -290,12 +290,15 @@ body {
     color: white;
     cursor: pointer;
     font-family: Fredoka;
+    text-decoration: none;
+    text-align: center;
     width: 300px;
     align-items: center;
     align-content: center;
     justify-content: center;
     padding: 10px;
     margin-bottom: 10px;
+    border: #000000 solid 2px;
     cursor: pointer;
     transition: transform 0.07s ease, box-shadow 0.07s ease;
     box-shadow: 3px 3px 0px 1px rgb(0, 0, 0);
@@ -309,6 +312,7 @@ body {
     cursor: pointer;
     font-family: Fredoka;
     padding: 10px;
+    border: #000000 solid 2px;
     margin-bottom: 10px;
     cursor: pointer;
     transition: transform 0.07s ease, box-shadow 0.07s ease;
@@ -413,7 +417,9 @@ body {
     margin-inline: 20px;
     background-color: var(--color1);
     box-shadow: 3px 3px 0px black;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    /* margin-top: 50px; */
+    padding-block: 25px;
     box-sizing: border-box;
     /* position: relative; */
     /* height: 100%; */

@@ -210,8 +210,6 @@ body {
     border: #000000 solid 1px;
     transition: transform 0.07s ease, box-shadow 0.07s ease;
     box-shadow: 3px 3px 0px 1px rgb(0, 0, 0);
-    display: inline-block;
-    margin-bottom: 15px;
 }
 
 .button2:hover {

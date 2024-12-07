@@ -60,10 +60,11 @@
                 <p>{!! nl2br(e($article->konten)) !!}</p>
             </div>
         </div>
+        <div class="home-button">
+            <a href="{{ url('/') }}" class="button2">Home</a>
+        </div>
     </div>
-    <div class="home-button">
-        <a href="{{ url('/') }}" class="button2">Home</a>
-    </div>
+
 
 </body>
 </html>

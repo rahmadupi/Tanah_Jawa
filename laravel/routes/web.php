@@ -9,6 +9,8 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/article', [ArticleController::class, 'index'])->name('article');
+// Route::get('/konten', [ArticleController::class, 'index'])->name('konten');
+Route::post('/konten', [ArticleController::class, 'show'])->name('konten.show');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
