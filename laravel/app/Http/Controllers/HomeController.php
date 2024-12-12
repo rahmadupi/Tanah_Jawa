@@ -15,7 +15,7 @@ class HomeController extends Controller
         ->select('users.username', 'scores.score', 'scores.last_take')
         ->orderByDesc('scores.score')
         ->get();
-        $articles = Article::orderBy('created_at', 'desc')->limit(3)->get();
+        $articles = Article::orderBy('index', 'desc')->limit(3)->get();
         return view('home', compact('leaderboard', 'articles'));
     }
 }
