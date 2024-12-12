@@ -20,10 +20,10 @@
                 @auth
                     <button id="usernameButton" class="username-button">{{ Auth::user()->username }}</button>
                     <div id="dropdown" class="dropdown-content">
-                        <form method="post" action="{{ url('/logout') }}">
+                        <!-- <form method="post" action="{{ url('/logout') }}">
                             @csrf
-                            <button id="logout_button" type="submit">Logout</button>
-                        </form>
+                        </form> -->
+                        <button id="logout_button" type="submit">Logout</button>
                     </div>
                 @else
                     <button id="usernameButton" class="username-button">Guest</button>
@@ -112,10 +112,11 @@
             <div id="logout_modal" class="modal">
                 <div class="modal-content">
                     <p>Beneran Logout?</p>
-                    <form method="post" action="">
-                        <input type="hidden" name="action" value="logout">
+                    <form method="post" action="{{ url('/logout') }}">
+                        @csrf
+                        <!-- <button id="logout_button" type="submit">Logout</button> -->
                         <button type="submit" class="button2">Yes</button>
-                        <button type="button" id="cancel_button" class="button2">Cancel</button>
+                        <button type="submit" id="cancel_button" class="button2">Cancel</button>
                     </form>
                 </div>
             </div>

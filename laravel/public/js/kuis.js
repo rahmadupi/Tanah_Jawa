@@ -1,49 +1,49 @@
 // Elemen DOM
-const backsoundAudio = document.getElementById('backsoundAudio');
+const backsoundAudio = document.getElementById("backsoundAudio");
 const hoverSound = document.getElementById("hoverSound");
 const correctSound = document.getElementById("correctSound");
 const incorrectSound = document.getElementById("incorrectSound");
 
-const pauseBtn = document.getElementById('pauseBtn');
-const menuForm = document.getElementById('menuForm');
-const menuBlur = document.getElementById('menuBlur');
-const restartBtn = document.getElementById('restartBtn');
-const returnHomeBtn = document.getElementById('returnHomeBtn');
-const settingBtn = document.getElementById('settingBtn');
-const settingForm = document.getElementById('settingForm');
-const musicVolumeSlider = document.getElementById('musicVolume');
-const sfxVolumeSlider = document.getElementById('sfxVolume');
-const progress = document.getElementById('progress');
+const pauseBtn = document.getElementById("pauseBtn");
+const menuForm = document.getElementById("menuForm");
+const menuBlur = document.getElementById("menuBlur");
+const restartBtn = document.getElementById("restartBtn");
+const returnHomeBtn = document.getElementById("returnHomeBtn");
+const settingBtn = document.getElementById("settingBtn");
+const settingForm = document.getElementById("settingForm");
+const musicVolumeSlider = document.getElementById("musicVolume");
+const sfxVolumeSlider = document.getElementById("sfxVolume");
+const progress = document.getElementById("progress");
 
-const leftHeart = document.getElementById('leftHeart');
-const rightHeart = document.getElementById('rightHeart');
-const fullHeart = document.getElementById('fullHeart');
-const heartAmmount = document.getElementById('heartAmmount');
+const leftHeart = document.getElementById("leftHeart");
+const rightHeart = document.getElementById("rightHeart");
+const fullHeart = document.getElementById("fullHeart");
+const heartAmmount = document.getElementById("heartAmmount");
 
-const question = document.getElementById('question');
-const option_1 = document.getElementById('option-1');
-const option_2 = document.getElementById('option-2');
-const option_3 = document.getElementById('option-3');
-const option_4 = document.getElementById('option-4');
+const question = document.getElementById("question");
+const option_1 = document.getElementById("option-1");
+const option_2 = document.getElementById("option-2");
+const option_3 = document.getElementById("option-3");
+const option_4 = document.getElementById("option-4");
 
-const successForm = document.getElementById('successForm');
-const failForm = document.getElementById('failForm');
-const gameOverMessage = document.getElementById('gameOverMessage');
-const accuracyDisplay = document.getElementById('accuracyDisplay');
-const accuracyPercentage = document.querySelector('.accuracyPercentage');
-const accuracyText = document.querySelector('.accuracyText');
-const statisticForm = document.getElementById('statisticForm');
-const correctStat = document.getElementById('correctStat');
-const incorrectStat = document.getElementById('incorrectStat');
-const streakStat = document.getElementById('streakStat');
-const scoreStat = document.getElementById('scoreStat');
+const successForm = document.getElementById("successForm");
+const failForm = document.getElementById("failForm");
+const gameOverMessage = document.getElementById("gameOverMessage");
+const accuracyDisplay = document.getElementById("accuracyDisplay");
+const accuracyPercentage = document.querySelector(".accuracyPercentage");
+const accuracyText = document.querySelector(".accuracyText");
+const statisticForm = document.getElementById("statisticForm");
+const correctStat = document.getElementById("correctStat");
+const incorrectStat = document.getElementById("incorrectStat");
+const streakStat = document.getElementById("streakStat");
+const scoreStat = document.getElementById("scoreStat");
 
-const container2 = document.getElementById('container2');
-const container22 = document.getElementById('container22');
-const tryAgainBtnSuccess = document.getElementById('tryAgainBtnSuccess');
-const tryAgainBtnFail = document.getElementById('tryAgainBtnFail');
-const returnHomeBtnSuccess = document.getElementById('returnHomeBtnSuccess');
-const returnHomeBtnFail = document.getElementById('returnHomeBtnFail');
+const container2 = document.getElementById("container2");
+const container22 = document.getElementById("container22");
+const tryAgainBtnSuccess = document.getElementById("tryAgainBtnSuccess");
+const tryAgainBtnFail = document.getElementById("tryAgainBtnFail");
+const returnHomeBtnSuccess = document.getElementById("returnHomeBtnSuccess");
+const returnHomeBtnFail = document.getElementById("returnHomeBtnFail");
 
 let accrcyPercentage = 0;
 
@@ -64,17 +64,17 @@ backsoundAudio.volume = musicVolumeSlider.value / 100;
 hoverSound.volume = sfxVolumeSlider.value / 100;
 
 // Update volume musik ketika slider digeser
-musicVolumeSlider.addEventListener('input', (event) => {
+musicVolumeSlider.addEventListener("input", (event) => {
     alert(event.target.value / 100);
     backsoundAudio.volume = event.target.value / 100;
 });
 
 // Update volume SFX ketika slider digeser
-sfxVolumeSlider.addEventListener('input', (event) => {
+sfxVolumeSlider.addEventListener("input", (event) => {
     hoverSound.volume = event.target.value / 100;
 });
 
-function PlayBacksoundAudio () {
+function PlayBacksoundAudio() {
     const duration = backsoundAudio.duration;
 
     if (duration > 0) {
@@ -85,18 +85,18 @@ function PlayBacksoundAudio () {
 
     // Putar audio
     backsoundAudio.play().catch((error) => {
-        console.error('Gagal memutar audio:', error);
+        console.error("Gagal memutar audio:", error);
     });
 }
 
-backsoundAudio.addEventListener('loadedmetadata', () => {
+backsoundAudio.addEventListener("loadedmetadata", () => {
     PlayBacksoundAudio();
 });
 
-document.querySelectorAll(".option").forEach(option => {
+document.querySelectorAll(".option").forEach((option) => {
     option.addEventListener("mouseenter", () => {
-      hoverSound.currentTime = 0.3;
-      hoverSound.play();
+        hoverSound.currentTime = 0.3;
+        hoverSound.play();
     });
 });
 
@@ -116,34 +116,34 @@ function LoadQuestion(currentQuestion) {
 }
 
 // Fungsi untuk menampilkan menu
-pauseBtn.addEventListener('click', () => {
+pauseBtn.addEventListener("click", () => {
     menuForm.style.display = "inline";
     menuBlur.style.display = "flex";
 });
 
 // Menutup menu saat mengklik blur
-menuBlur.addEventListener('click', () => {
+menuBlur.addEventListener("click", () => {
     menuForm.style.display = "none";
     menuBlur.style.display = "none";
     settingForm.style.display = "none";
 });
 
-restartBtn.addEventListener('click', () => {
+restartBtn.addEventListener("click", () => {
     menuForm.style.display = "none";
     menuBlur.style.display = "none";
     StartQuiz();
     PlayBacksoundAudio();
 });
 
-returnHomeBtn.addEventListener('click', () => {
-    window.location.href = '{{ url('home') }}';
+returnHomeBtn.addEventListener("click", () => {
+    window.location.href = "{{ url('home') }}";
 });
 
-returnHomeBtnSuccess.addEventListener('click', () => {
-    window.location.href = '{{ url('home') }}';
+returnHomeBtnSuccess.addEventListener("click", () => {
+    window.location.href = "{{ url('home') }}";
 });
-returnHomeBtnFail.addEventListener('click', () => {
-    window.location.href = '{{ url('home') }}';
+returnHomeBtnFail.addEventListener("click", () => {
+    window.location.href = "{{ url('home') }}";
 });
 
 function resetDisplayScore() {
@@ -167,20 +167,20 @@ function resetDisplayScore() {
     container2.style.opacity = "0";
 }
 
-tryAgainBtnSuccess.addEventListener('click', () => {
+tryAgainBtnSuccess.addEventListener("click", () => {
     StartQuiz();
     PlayBacksoundAudio();
     successForm.style.display = "none";
     resetDisplayScore();
 });
-tryAgainBtnFail.addEventListener('click', () => {
+tryAgainBtnFail.addEventListener("click", () => {
     StartQuiz();
     PlayBacksoundAudio();
     failForm.style.display = "none";
     resetDisplayScore();
 });
 
-settingBtn.addEventListener('click', () => {
+settingBtn.addEventListener("click", () => {
     settingForm.style.display = "flex";
     menuForm.style.display = "none";
     menuBlur.style.display = "flex";
@@ -188,43 +188,43 @@ settingBtn.addEventListener('click', () => {
 
 // Fungsi animasi saat jawaban salah
 function animateHeartSplit() {
-    fullHeart.classList.add('loseHeart');
-    leftHeart.classList.add('split-left');
-    rightHeart.classList.add('split-right');
+    fullHeart.classList.add("loseHeart");
+    leftHeart.classList.add("split-left");
+    rightHeart.classList.add("split-right");
 
     setTimeout(() => {
-        leftHeart.style.transition = 'none';
-        rightHeart.style.transition = 'none';
-        leftHeart.classList.remove('split-left');
-        rightHeart.classList.remove('split-right');
+        leftHeart.style.transition = "none";
+        rightHeart.style.transition = "none";
+        leftHeart.classList.remove("split-left");
+        rightHeart.classList.remove("split-right");
     }, 500);
 
     setTimeout(() => {
-        leftHeart.style.transition = 'all 0.5s ease-out';
-        rightHeart.style.transition = 'all 0.5s ease-out';
+        leftHeart.style.transition = "all 0.5s ease-out";
+        rightHeart.style.transition = "all 0.5s ease-out";
     }, 1000);
 
     setTimeout(() => {
-        fullHeart.classList.remove('loseHeart');
+        fullHeart.classList.remove("loseHeart");
     }, 1000);
 }
 
 function CalculateScore() {
     let baseScore = (correctCount / questionAmmount) * 100;
-    console.log('Base Score: ', baseScore);
+    console.log("Base Score: ", baseScore);
 
     let streakBonus = maxStreak * 2;
-    console.log('Streak Bonus: ', streakBonus);
+    console.log("Streak Bonus: ", streakBonus);
 
     accrcyPercentage = baseScore;
-    console.log('Correct Percentage: ', accrcyPercentage);
+    console.log("Correct Percentage: ", accrcyPercentage);
 
     targetScore = baseScore + streakBonus;
-    console.log('Total Score: ', targetScore);
+    console.log("Total Score: ", targetScore);
 }
 
 function DisplayScore() {
-    if(isSuccess){
+    if (isSuccess) {
         successForm.style.display = "flex";
         setTimeout(() => {
             gameOverMessage.style.fontSize = "2rem";
@@ -243,31 +243,30 @@ function DisplayScore() {
                     red ${count}% 100%
                     )
                     `;
-                    if (count >= accrcyPercentage) {
-                        clearInterval(accChart);
-                    }
-                }, 30);
-                count = 0;
-                const accValue = setInterval(() => {
-                    if (count >= accrcyPercentage) {
-                        clearInterval(accValue); // Hentikan interval jika mencapai target
-                    } else {
-                        count++;
-                        accuracyText.textContent = count + '%'; // Update teks
-                    }
-                }, 30);
+                if (count >= accrcyPercentage) {
+                    clearInterval(accChart);
+                }
+            }, 30);
+            count = 0;
+            const accValue = setInterval(() => {
+                if (count >= accrcyPercentage) {
+                    clearInterval(accValue); // Hentikan interval jika mencapai target
+                } else {
+                    count++;
+                    accuracyText.textContent = count + "%"; // Update teks
+                }
+            }, 30);
 
-
-            statisticForm.style.opacity = "100%"
+            statisticForm.style.opacity = "100%";
         }, 1200);
         setTimeout(() => {
             let count = 0;
-                const correctInterval = setInterval(() => {
+            const correctInterval = setInterval(() => {
                 if (count >= correctCount) {
-                  clearInterval(correctInterval); // Hentikan interval jika mencapai target
+                    clearInterval(correctInterval); // Hentikan interval jika mencapai target
                 } else {
                     count++;
-                  correctStat.textContent = count; // Update teks
+                    correctStat.textContent = count; // Update teks
                 }
             }, 30);
         }, 1300);
@@ -308,10 +307,37 @@ function DisplayScore() {
         setTimeout(() => {
             container2.style.opacity = "100%";
         }, 2500);
-    }else{
+    } else {
         failForm.style.display = "flex";
         container22.style.opacity = "100%";
     }
+    const userId = document.getElementById("user_id").value;
+    const lastTake = new Date().toISOString();
+    submitScore(targetScore, lastTake, userId);
+}
+
+function submitScore(score, lastTake, userId) {
+    fetch("{{ route('score.store') }}", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-TOKEN": document
+                .querySelector('meta[name="csrf-token"]')
+                .getAttribute("content"),
+        },
+        body: JSON.stringify({
+            score: score,
+            last_take: lastTake,
+            user_id: userId,
+        }),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log("Success:", data);
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
 }
 
 function PlayCorrectSound() {
@@ -331,20 +357,20 @@ function correctAns() {
     currentProgress += 100 / questionAmmount;
     progress.style.width = `${currentProgress}%`;
 
-    if(streak){
+    if (streak) {
         streakCount++;
-    }else{
+    } else {
         streak = true;
         streakCount = 1;
     }
 
-    if(streakCount > maxStreak){
+    if (streakCount > maxStreak) {
         maxStreak = streakCount;
     }
 
-    console.log('Streak Count: ',streakCount);
+    console.log("Streak Count: ", streakCount);
     // stopTimer();
-  }
+}
 
 // Fungsi untuk jawaban yang salah
 function wrongAns() {
@@ -353,14 +379,14 @@ function wrongAns() {
     heartAmmount.textContent = currentHeart;
     animateHeartSplit();
 
-    if(streak){
+    if (streak) {
         streak = false;
         streakCount = 0;
     }
 
-    console.log('Streak Count: ',streakCount);
+    console.log("Streak Count: ", streakCount);
 
-    if(currentHeart < 1){
+    if (currentHeart < 1) {
         isSuccess = false;
         DisplayScore();
     }
@@ -368,30 +394,30 @@ function wrongAns() {
 
 // Fungsi untuk memeriksa jawaban yang dipilih
 function CheckAnswer(event) {
-  const clickedOption = event.target;
-  if (clickedOption.classList.contains('option')) {
-    const clickedIndex = parseInt(clickedOption.dataset.index, 10);
+    const clickedOption = event.target;
+    if (clickedOption.classList.contains("option")) {
+        const clickedIndex = parseInt(clickedOption.dataset.index, 10);
 
-    currentQuestion++;
-    console.log('Current Question:', currentQuestion); // Debug
-    console.log('Question Ammount:', questionAmmount);
-    const isCorrect = clickedIndex == correctIndex;
-    isCorrect ? correctAns() : wrongAns();
-    if(currentQuestion === questionAmmount){
-        CalculateScore();
-        DisplayScore();
-    }else {
-        correctIndex = LoadQuestion(currentQuestion);
-        console.log('Correct Index: ', correctIndex);
+        currentQuestion++;
+        console.log("Current Question:", currentQuestion); // Debug
+        console.log("Question Ammount:", questionAmmount);
+        const isCorrect = clickedIndex == correctIndex;
+        isCorrect ? correctAns() : wrongAns();
+        if (currentQuestion === questionAmmount) {
+            CalculateScore();
+            DisplayScore();
+        } else {
+            correctIndex = LoadQuestion(currentQuestion);
+            console.log("Correct Index: ", correctIndex);
+        }
     }
-  }
 }
 
 // Menambahkan event listener pada setiap opsi jawaban
 function setUpOptions() {
-  document.querySelectorAll('.option').forEach(option => {
-    option.addEventListener('click', CheckAnswer);
-  });
+    document.querySelectorAll(".option").forEach((option) => {
+        option.addEventListener("click", CheckAnswer);
+    });
 }
 // Fungsi untuk memulai kuis
 function StartQuiz() {
@@ -410,7 +436,7 @@ function StartQuiz() {
     progress.style.width = `${currentProgress}%`;
     currentQuestion = 0; // Indeks soal saat ini
     correctIndex = LoadQuestion(currentQuestion); // Memuat soal pertama dan mendapatkan indeks jawaban yang benar
-    console.log('Correct Index: ', correctIndex);
+    console.log("Correct Index: ", correctIndex);
     setUpOptions(); // Menyiapkan event listener untuk jawaban
 
     // Jika sudah sampai soal terakhir, tampilkan skor

@@ -59,8 +59,18 @@
             <h2>LOGIN</h2>
             <form method="POST" action="{{ route('login') }}">
                 @csrf
-                <input type="text" name="email" placeholder="Email" required>
-                <input type="password" name="password" placeholder="Password" required>
+                <div class="input">
+                    <input type="text" name="email" placeholder="Email" value="{{ old('email') }}" required>
+                    @if ($errors->has('email'))
+                    <small class="login-error">{{ $errors->first('email') }}</small>
+                    @endif
+                </div>
+                <div class input>
+                    <input type="password" name="password" placeholder="Password" required>
+                    @if ($errors->has('password'))
+                    <small class="login-error">{{ $errors->first('password') }}</small>
+                    @endif
+                </div>
                 <button type="submit" class="button">Login</button>
             </form>
             <p>Tidak punya akun? <a href="{{ route('register') }}">Register</a></p>
