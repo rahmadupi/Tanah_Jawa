@@ -52,7 +52,7 @@ let correctIndex;
 let currentQuestion;
 let currentHeart;
 let currentProgress;
-let questionAmmount = 3;
+let questionAmmount = 10;
 let correctCount = 0;
 let incorrectCount = 0;
 let isSuccess = true;
