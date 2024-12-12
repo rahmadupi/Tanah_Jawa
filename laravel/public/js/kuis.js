@@ -319,8 +319,13 @@ function DisplayScore() {
 }
 
 function submitScore(score, lastTake, userId) {
-    console.log(userId);
-    fetch("/api/score", {
+    // Convert the datetime to MySQL format
+    const formattedLastTake = new Date(lastTake)
+        .toISOString()
+        .slice(0, 19)
+        .replace("T", " ");
+
+    fetch("/score", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -330,7 +335,7 @@ function submitScore(score, lastTake, userId) {
         },
         body: JSON.stringify({
             score: score,
-            last_take: lastTake,
+            last_take: formattedLastTake,
             user_id: userId,
         }),
     })

@@ -22,4 +22,5 @@ class Article extends Model
         'konten',
         'url',
     ];
+    public $timestamps = false; 
 }

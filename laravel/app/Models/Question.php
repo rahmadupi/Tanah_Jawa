@@ -17,4 +17,5 @@ class Question extends Model
         'correct_index',
         'url',
     ];
+    public $timestamps = false; 
 }
