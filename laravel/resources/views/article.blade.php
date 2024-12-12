@@ -6,6 +6,7 @@
     <title>Artikel</title>
     <link rel="stylesheet" href="{{ asset('css/article.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/font.css') }}" />
+    <link rel="icon" href="{{ asset('assets/Logo.png') }}" type="image/x-icon">
     <script src="https://unpkg.com/css-doodle@0.25.0/css-doodle.min.js"></script>
 </head>
 <body>

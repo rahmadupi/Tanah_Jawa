@@ -18,7 +18,6 @@ return new class extends Migration
             $table->longText('deskripsi');
             $table->longText('konten');
             $table->string('url');
-            $table->timestamp('created_at');
         });
 
     }

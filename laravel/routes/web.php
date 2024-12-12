@@ -19,8 +19,12 @@ Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->na
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+// rahmdupi get question api
+
 Route::get('/kuis', [QuizController::class, 'index'])->name('kuis');
 Route::post('/score', [QuizController::class, 'store'])->name('score.store');
+
+Route::get('/api/questions', [QuizController::class, 'getQuestions']);
 
 Route::get('/debug', function () {
     return 'Routes are being loaded correctly';

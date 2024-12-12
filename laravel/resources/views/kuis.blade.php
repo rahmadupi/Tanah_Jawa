@@ -4,17 +4,18 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Kuis</title>
-        <link rel="stylesheet" href="kuis.css" />
+        <link rel="stylesheet" href="{{ asset('css/kuis.css') }}" />
+        <link rel="icon" href="{{ asset('assets/Logo.png') }}" type="image/x-icon">
         <link
             href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
             rel="stylesheet"
         />
     </head>
     <body>
-        <audio id="backsoundAudio" src="./audios/backsound.m4a" loop></audio>
-        <audio id="hoverSound" src="./audios/bubbleSFX.mp3"></audio>
-        <audio id="correctSound" src="./audios/correctSFX.mp3"></audio>
-        <audio id="incorrectSound" src="./audios/incorrectSFX.mp3"></audio>
+        <audio id="backsoundAudio" src="{{ asset('audio/backsound.m4a') }}" loop></audio>
+        <audio id="hoverSound" src="{{ asset('audio/bubbleSFX.mp3') }}"></audio>
+        <audio id="correctSound" src="{{ asset('audio/correctSFX.mp3') }}"></audio>
+        <audio id="incorrectSound" src="{{ asset('audio/incorrectSFX.mp3') }}"></audio>
 
         <div class="line"></div>
         <div class="options-container">
@@ -30,19 +31,19 @@
             </div>
             <div class="heartContainer">
                 <img
-                    src="./images/fullHeart.png"
+                    src="{{ asset('assets/fullHeart.png') }}"
                     class="heart"
                     id="fullHeart"
                     alt=""
                 />
                 <img
-                    src="./images/leftHeart.png"
+                    src="{{ asset('assets/leftHeart.png') }}"
                     id="leftHeart"
                     class="heart"
                     alt="Left Half"
                 />
                 <img
-                    src="./images/rightHeart.png"
+                    src="{{ asset('assets/rightHeart.png') }}"
                     id="rightHeart"
                     class="heart"
                     alt="Right Half"
@@ -162,6 +163,6 @@
             </div>
         </div>
 
-        <script src="kuis.js"></script>
+        <script src="{{ asset('js/kuis.js') }}"></script>
     </body>
 </html>

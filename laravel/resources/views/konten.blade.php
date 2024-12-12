@@ -7,6 +7,7 @@
     <script src="https://unpkg.com/css-doodle@0.25.0/css-doodle.min.js"></script>
     <link rel="icon" href="{{ asset('assets/Logo.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+    <link rel="icon" href="{{ asset('assets/Logo.png') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/konten.css') }}">
 </head>
 <body>

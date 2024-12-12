@@ -445,14 +445,14 @@ function StartQuiz() {
     // }
 }
 
-// fetch('{{ url('ambilSoal') }}')
-//     .then(response => response.json())
-//     .then(data => {
-//         data.forEach(question => {
-//             questions.push(question);
-//             console.log(questions);
-//         });
+fetch("/api/questions")
+    .then((response) => response.json())
+    .then((data) => {
+        data.forEach((question) => {
+            questions.push(question);
+            console.log(questions);
+        });
 
-//         StartQuiz();
-//     })
-//     .catch(error => console.error('Error:', error));
+        StartQuiz();
+    })
+    .catch((error) => console.error("Error:", error));

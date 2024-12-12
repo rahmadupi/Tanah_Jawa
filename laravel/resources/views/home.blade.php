@@ -40,7 +40,7 @@
                     <div class="main-content">
                         <h1>Kuis Sejarah</h1>
                         <h2>Indonesia</h2>
-                        <a class="button" href="{{ url('/') }}">Take Quiz</a>
+                        <a class="button" href="{{ url('/kuis') }}">Take Quiz</a>
                         <a class="button" href="{{ url('/article') }}">Learn</a>
                     </div>
                 </div>

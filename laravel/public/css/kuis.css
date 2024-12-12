@@ -3,7 +3,7 @@ body {
     width: 100vw;
     height: 100vh;
     position: relative;
-    background: url("./images/backgroundKuis.jpg");
+    background: url("../assets/backgroundKuis.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     font-family: "Fredoka One", sans-serif;
@@ -70,7 +70,7 @@ body {
     position: absolute;
     width: 4%;
     height: 83.33%;
-    background: url("../images/pauseBtn.png") no-repeat center center;
+    background: url("../assets/pauseBtn.png") no-repeat center center;
     background-size: cover;
     display: inline-flex;
     justify-content: center;
