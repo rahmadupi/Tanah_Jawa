@@ -52,7 +52,7 @@ let correctIndex;
 let currentQuestion;
 let currentHeart;
 let currentProgress;
-let questionAmmount = 5;
+let questionAmmount = 3;
 let correctCount = 0;
 let incorrectCount = 0;
 let isSuccess = true;
@@ -136,14 +136,14 @@ restartBtn.addEventListener("click", () => {
 });
 
 returnHomeBtn.addEventListener("click", () => {
-    window.location.href = "{{ url('home') }}";
+    // window.location.href = "{{ url('/') }}";
 });
 
 returnHomeBtnSuccess.addEventListener("click", () => {
-    window.location.href = "{{ url('home') }}";
+    // window.location.href = "{{ url('/') }}";
 });
 returnHomeBtnFail.addEventListener("click", () => {
-    window.location.href = "{{ url('home') }}";
+    // window.location.href = "{{ url('/') }}";
 });
 
 function resetDisplayScore() {
@@ -311,13 +311,16 @@ function DisplayScore() {
         failForm.style.display = "flex";
         container22.style.opacity = "100%";
     }
-    const userId = document.getElementById("user_id").value;
+    const userId = document
+        .querySelector('meta[name="user-id"]')
+        .getAttribute("content");
     const lastTake = new Date().toISOString();
     submitScore(targetScore, lastTake, userId);
 }
 
 function submitScore(score, lastTake, userId) {
-    fetch("{{ route('score.store') }}", {
+    console.log(userId);
+    fetch("/api/score", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

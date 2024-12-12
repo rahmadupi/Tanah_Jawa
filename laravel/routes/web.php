@@ -22,9 +22,8 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // rahmdupi get question api
 
 Route::get('/kuis', [QuizController::class, 'index'])->name('kuis');
-Route::post('/score', [QuizController::class, 'store'])->name('score.store');
-
-Route::get('/api/questions', [QuizController::class, 'getQuestions']);
+Route::post('/api/score', [QuizController::class, 'score_store'])->name('score.score_store');
+Route::get('/api/questions', [QuizController::class, 'get_questions']);
 
 Route::get('/debug', function () {
     return 'Routes are being loaded correctly';

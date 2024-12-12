@@ -10,8 +10,12 @@
             href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
             rel="stylesheet"
         />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+        <meta name="user-id" content="{{ Auth::user()->id }}">
+
     </head>
     <body>
+
         <audio id="backsoundAudio" src="{{ asset('audio/backsound.m4a') }}" loop></audio>
         <audio id="hoverSound" src="{{ asset('audio/bubbleSFX.mp3') }}"></audio>
         <audio id="correctSound" src="{{ asset('audio/correctSFX.mp3') }}"></audio>
@@ -55,9 +59,14 @@
         <div class="menu" id="menuForm" style="display: none">
             <p>MENU</p>
             <div class="container">
-                <a class="menu-option" id="returnHomeBtn">HOME</a>
-                <a class="menu-option" id="restartBtn">RESTART</a>
-                <a class="menu-option" id="settingBtn">SETTINGS</a>
+                <div class="menu-option" id="returnHomeBtn">
+                    <!-- HOME -->
+                    <a href="{{ url('/') }}">HOME</a>
+                </div>
+                <div class="menu-option" id="restartBtn">RESTART</div>
+                <div class="menu-option" id="settingBtn">SETTINGS</div>
+                <!-- <a class="menu-option" id="restartBtn">RESTART</a>
+                <a class="menu-option" id="settingBtn">SETTINGS</a> -->
             </div>
         </div>
         <div class="settingOption" id="settingForm">
@@ -135,7 +144,8 @@
             <div class="container2" id="container2">
                 <div class="tryAgainBtn" id="tryAgainBtnSuccess">Try Again</div>
                 <div class="returnHomeBtn2" id="returnHomeBtnSuccess">
-                    Return Home
+                <!-- <div>-->
+                     <a href="{{ url('/')}}">Return Home</a>
                 </div>
             </div>
         </div>
@@ -158,7 +168,8 @@
             >
                 <div class="tryAgainBtn" id="tryAgainBtnFail">Try Again</div>
                 <div class="returnHomeBtn2" id="returnHomeBtnFail">
-                    Return Home
+                <!-- <div> -->
+                    <a href="{{ url('/')}}">Return Home</a>
                 </div>
             </div>
         </div>
