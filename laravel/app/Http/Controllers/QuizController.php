@@ -27,7 +27,7 @@ class QuizController extends Controller
     Log::info('Score store request received', [
         'user_id' => $request->input('user_id'),
         'score' => $request->input('score'),
-        'last_take' => $request->input('last_take')
+        // 'last_take' => $request->input('last_take')
     ]);
 
     // Find the existing score entry
@@ -36,26 +36,26 @@ class QuizController extends Controller
     if ($existingScore) {
         // Add the new score to the existing score
         $existingScore->score += $request->input('score');
-        $existingScore->last_take = $request->input('last_take');
+        // $existingScore->last_take = $request->input('last_take');
         $existingScore->save();
 
         Log::info('Existing score updated', [
             'user_id' => $request->input('user_id'),
             'new_score' => $existingScore->score,
-            'last_take' => $existingScore->last_take
+            // 'last_take' => $existingScore->last_take
         ]);
     } else {
         // Create a new score entry
         $newScore = Score::create([
             'user_id' => $request->input('user_id'),
             'score' => $request->input('score'),
-            'last_take' => $request->input('last_take'),
+            // 'last_take' => $request->input('last_take'),
         ]);
 
         Log::info('New score created', [
             'user_id' => $request->input('user_id'),
             'score' => $newScore->score,
-            'last_take' => $newScore->last_take
+            // 'last_take' => $newScore->last_take
         ]);
     }
 

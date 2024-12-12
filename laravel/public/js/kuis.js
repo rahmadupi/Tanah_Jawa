@@ -325,7 +325,7 @@ function submitScore(score, lastTake, userId) {
         .slice(0, 19)
         .replace("T", " ");
 
-    fetch("/score", {
+    fetch("/api/score", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
