@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artikel</title>
-    <link rel="stylesheet" href="{{ asset('css/konten.css') }}">
+    <script src="https://unpkg.com/css-doodle@0.25.0/css-doodle.min.js"></script>
     <link rel="icon" href="{{ asset('assets/Logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/konten.css') }}">
 </head>
 <body>
     <div class="background-container">
@@ -64,7 +66,9 @@
             <a href="{{ url('/') }}" class="button2">Home</a>
         </div>
     </div>
-
+    <script>
+        console.log('Show method called with Article ID: {{ $article->id }}');
+    </script>
 
 </body>
 </html>

@@ -223,3 +223,12 @@ body {
     transform: translate(1px, 1px);
     box-shadow: 1px 1px 0px 1px rgb(0, 0, 0);
 }
+
+.register-error {
+    text-align: center;
+    color: red;
+    font-family: MinaB;
+    /* margin: 10px; */
+    padding: 0;
+    font-size: 0.7em;
+}

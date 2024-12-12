@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('option4');
             $table->integer('correct_index');
             $table->string('url')->nullable();
-            $table->timestamps();
+
         });
     }
 

@@ -80,6 +80,7 @@
             </div>
 
             <div class="second" id="artikel">
+                @if ($articles->isNotEmpty())
                 <div class="section-header">
                     <div class="section-title">
                         <h4>Artikel</h4>
@@ -98,16 +99,17 @@
                                 <div class="title"><h4>{{ $article->judul }}</h4></div>
                                 <div class="description"><p>{{ $article->deskripsi }}</p></div>
                             </div>
-                            <form method="POST" action="{{ route('konten.show') }}">
-                                @csrf
-                                <input type="hidden" name="id" value="{{ $article->id }}" >
-                                <button type="submit" class="button2">Baca</button>
-                            </form>
+                            <a href="{{ route('konten.show', ['id' => $article->index]) }}" class="button2">Baca</a>
                         </div>
                     @endforeach
                 </div>
+                @endif
             </div>
+            @if ($articles->isEmpty())
+                <div style="margin-bottom: 100px;">sda</div>
+            @endif
         </div>
+
         <div class="outer-modal" id="modal-parrent">
             <div id="logout_modal" class="modal">
                 <div class="modal-content">

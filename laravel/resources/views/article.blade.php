@@ -67,11 +67,7 @@
                                 <p>{{ $article->deskripsi }}</p>
                             </div>
                         </div>
-                        <form method="POST" action="{{ route('/konten') }}">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $article->id }}" >
-                            <button type="submit" class="button2">Baca</button>
-                        </form>
+                        <a href="{{ route('konten.show', ['id' => $article->index]) }}" class="button2">Baca</a>
                     </div>
                 @endforeach
             </div>
@@ -80,5 +76,10 @@
     <div class="home-button">
         <a href="{{ url('/') }}" class="button2">Home</a>
     </div>
+    <script>
+        @if(isset($logMessage))
+            console.log(@json($logMessage));
+        @endif
+    </script>
 </body>
 </html>

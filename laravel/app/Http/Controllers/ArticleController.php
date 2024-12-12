@@ -13,13 +13,14 @@ class ArticleController extends Controller
         return view('article', compact('articles'));
     }
 
-    public function show(Request $request)
+    public function show($id)
     {
-        // Get the ID from the request
-        $id = $request->input('id');
-        \Log::info('Article ID: ' . $id);
+        // Validate the ID
+        if (!is_numeric($id) || !Article::where('index', $id)->exists()) {
+            abort(404);
+        }
 
-        // Query the database based on the item ID
+        // Query the database for the article
         $article = Article::findOrFail($id);
 
         // Pass the article data to the view

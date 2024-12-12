@@ -59,8 +59,18 @@
             <h2>REGISTER</h2>
             <form method="POST" action="{{ route('register') }}">
                 @csrf
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="email" name="email" placeholder="Email" required>
+                @if ($errors->has('username'))
+                    <input type="text" name="username" placeholder="Username" style="margin-bottom: 0;" required>
+                    <small class="register-error">{{ $errors->first('username') }}</small>
+                @else
+                    <input type="text" name="username" placeholder="Username" required>
+                @endif
+                @if ($errors->has('email'))
+                    <input type="email" name="email" placeholder="Email" style="margin-bottom: 0;" required>
+                    <small class="register-error">{{ $errors->first('email') }}</small>
+                @else
+                    <input type="email" name="email" placeholder="Email" required>
+                @endif
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit" class="button">Buat Akun</button>
             </form>
