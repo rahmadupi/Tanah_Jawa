@@ -65,7 +65,7 @@
                     <small class="login-error">{{ $errors->first('email') }}</small>
                     @endif
                 </div>
-                <div class input>
+                <div class="input">
                     <input type="password" name="password" placeholder="Password" required>
                     @if ($errors->has('password'))
                     <small class="login-error">{{ $errors->first('password') }}</small>
