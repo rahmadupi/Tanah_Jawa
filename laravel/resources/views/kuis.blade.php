@@ -55,9 +55,9 @@
         <div class="menu" id="menuForm" style="display: none">
             <p>MENU</p>
             <div class="container">
-                <div class="menu-option" id="returnHomeBtn">HOME</div>
-                <div class="menu-option" id="restartBtn">RESTART</div>
-                <div class="menu-option" id="settingBtn">SETTINGS</div>
+                <a class="menu-option" id="returnHomeBtn">HOME</a>
+                <a class="menu-option" id="restartBtn">RESTART</a>
+                <a class="menu-option" id="settingBtn">SETTINGS</a>
             </div>
         </div>
         <div class="settingOption" id="settingForm">

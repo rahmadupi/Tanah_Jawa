@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\score;
+// use Illuminate\Support\Facades\DB;
+use App\Models\Question;
+use App\Models\Score;
 
 class QuizController extends Controller
 {
@@ -36,25 +37,24 @@ class QuizController extends Controller
     public function getQuestions()
     {
         // Query the database for questions
-        $questions = DB::table('questions')
-            ->select('question', 'Option1', 'Option2', 'Option3', 'Option4', 'correct_index')
+        $questions = Question::select('question', 'option1', 'option2', 'option3', 'option4', 'correct_index')
             ->inRandomOrder()
             ->limit(10)
             ->get()
             ->map(function ($question) {
                 return [
-                    'text' => $question->text,
+                    'text' => $question->question,
                     'options' => [
-                        $question->Option1,
-                        $question->Option2,
-                        $question->Option3,
-                        $question->Option4,
+                        $question->option1,
+                        $question->option2,
+                        $question->option3,
+                        $question->option4,
                     ],
                     'correctIndex' => (int)$question->correct_index,
                 ];
             });
 
-        // Return the questions as a JSON response
         return response()->json($questions);
+        // return 'test';
     }
 }

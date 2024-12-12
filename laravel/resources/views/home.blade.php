@@ -78,7 +78,6 @@
                     </table>
                 </div>
             </div>
-
             <div class="second" id="artikel">
                 @if ($articles->isNotEmpty())
                 <div class="section-header">
